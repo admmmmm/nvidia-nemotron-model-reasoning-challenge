@@ -1,0 +1,9 @@
+{
+  "model_name": "C:\\Users\\adm14\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-1.5B-Instruct\\snapshots\\989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "input_file": "data\\splits\\default\\val.jsonl",
+  "output_file": "outputs\\logs\\qwen_baseline_val_predictions.csv",
+  "adapter_dir": "outputs\\adapters\\qwen_baseline",
+  "max_new_tokens": 64,
+  "load_in_4bit": true,
+  "system_prompt": "You are solving a reasoning task. Return the final answer in \\boxed{} format when possible. If the answer contains characters that make boxed output ambiguous, return the exact raw answer."
+}

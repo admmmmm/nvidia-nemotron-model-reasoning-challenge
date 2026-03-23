@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Local env / secrets
+.env.server
+.venv/
+venv/
+
+# Model artifacts and caches
+outputs/adapters/
+outputs/submissions/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# Generated data
+data/splits/
+data/interim/
+data/synthetic/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Hugging Face
+.cache/huggingface/
+# Local datasets / exploratory artifacts
+train.csv
+test.csv
+test_prompt.txt
+

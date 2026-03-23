@@ -1,0 +1,258 @@
+id,gold_answer,raw_prediction,extracted_prediction,is_correct
+5642802d,king watches the magical crystal,\boxed{king follows the magical crystal},king follows the magical crystal,False
+55550b7d,hatter sees treasure,\boxed{turtle sees treasure},turtle sees treasure,False
+f15c5106,00001110,\boxed{00111110},00111110,False
+3cee428b,12.81,\boxed{14.1},14.1,False
+cff75782,wizard draws potion,\boxed{wizard found puzzle},wizard found puzzle,False
+97e7a57f,01010000,\boxed{10110101},10110101,False
+6a9cf9e1,dragon found the secret mirror,\boxed{dragon found the secret puzzle},dragon found the secret puzzle,False
+5309f723,00001011,\boxed{10110111},10110111,False
+43838649,16.28,\boxed{16.6},16.6,False
+dbf2b40f,10001101,\boxed{00101101},00101101,False
+ec770b31,15.13,\boxed{15.31},15.31,False
+fd3920e2,hatter watches in island,\boxed{dragon follows in valley},dragon follows in valley,False
+9328d73e,34.09,\boxed{39.1},39.1,False
+47dc6570,22,\boxed{#48},#48,False
+049d892c,70.91,\boxed{74.1},74.1,False
+53d09e5a,11011101,\boxed{01111111},01111111,False
+bf2220e7,:,"\boxed{(-:""}","(-:""",False
+d10f3988,the clever turtle found,\boxed{the golden knight found},the golden knight found,False
+e16e7f6d,01110100,\boxed{10110100},10110100,False
+77665807,113.44,\boxed{108.1},108.1,False
+779f2f4a,14.34,\boxed{13.9},13.9,False
+549f5220,5548,\boxed{6},6,False
+782e9e0f,rabbit creates the colorful puzzle,\boxed{rabbit chases the colorful puzzle},rabbit chases the colorful puzzle,False
+239f496a,36.78,\boxed{37.90},37.90,False
+ebc369ad,19.61,\boxed{21.1},21.1,False
+e5e29014,'%,\boxed{-},-,False
+01f90423,141.52,\boxed{136.1},136.1,False
+4fe5e805,157.28,\boxed{159.1},159.1,False
+a898cbc4,01010000,\boxed{00010000},00010000,False
+a926d5d0,/<,\boxed{<},<,False
+eac4329c,mouse studies mirror,\boxed{queen watches story},queen watches story,False
+24eb3401,36.45,\boxed{36.00},36.00,False
+2fb20366,147,\boxed{182},182,False
+362b4b99,45.69,\boxed{45.01},45.01,False
+74a50b2c,129.23,\boxed{136.1},136.1,False
+d2b4560f,00101001,\boxed{00110010},00110010,False
+6c30f260,-\(,\boxed{[},[,False
+b56d38be,[/),\boxed{^#},^#,False
+d67f28ad,131,\boxed{13},13,False
+ba285d3d,14.52,\boxed{14.26},14.26,False
+250ed426,40.07,\boxed{40.91},40.91,False
+ddd199dd,16.48,\boxed{17.1},17.1,False
+2dc6056a,11000001,\boxed{00000001},00000001,False
+1c566511,01010010,\boxed{00010001},00010001,False
+bbace822,111.59,\boxed{95.1},95.1,False
+5b06502f,1768,\boxed{89},89,False
+2459c775,61.15,\boxed{59.0},59.0,False
+bd3996eb,11.09,\boxed{11.8},11.8,False
+a6672f83,turtle watches the golden potion,\boxed{turtle creates the bright puzzle},turtle creates the bright puzzle,False
+90b06730,princess studies around cave,\boxed{princess watches beyond cave},princess watches beyond cave,False
+7528ad60,16.38,\boxed{16.00},16.00,False
+7c5c7b73,13,\boxed{55},55,False
+6290496a,queen dreams beyond library,\boxed{mouse writes beyond library},mouse writes beyond library,False
+936b3ae5,14>,\boxed{8},8,False
+b03ab026,74,\boxed{7},7,False
+17f99539,8.66,\boxed{8.76},8.76,False
+3370302a,00000010,\boxed{00011010},00011010,False
+32a812cd,444,\boxed{-25},-25,False
+41281e41,22.18,\boxed{22.49},22.49,False
+e2c069ae,/{,\boxed{/},/,False
+1521c036,17.01,\boxed{17.80},17.80,False
+f360b419,85.72,\boxed{84.1},84.1,False
+2f3ebe0b,turtle discovers the dark key,\boxed{wizard imagines the wise key},wizard imagines the wise key,False
+e5a5fdef,11001011,\boxed{10111010},10111010,False
+2affe39c,(],\boxed{<},<,False
+0b36cffd,32.46,\boxed{32.84},32.84,False
+ef1b13ac,8,\boxed{3},3,False
+2721e036,63.41,\boxed{59.8},59.8,False
+d4377d71,31.81,\boxed{33.0},33.0,False
+2b54c39a,87.71,\boxed{81.1},81.1,False
+85c3706f,dragon follows inside village,\boxed{hatter watches beyond library},hatter watches beyond library,False
+c5b058d6,134,\boxed{13},13,False
+b81b071c,queen imagines secret,\boxed{alice imagines mirror},alice imagines mirror,False
+ced947c8,01001011,\boxed{10001011},10001011,False
+ff9540e2,107.7,\boxed{102.1},102.1,False
+cc5d037a,134.68,\boxed{137.1},137.1,False
+4fe21caa,16.92,\boxed{16.74},16.74,False
+0d61b6e0,12.76,\boxed{13.0},13.0,False
+58350cd5,14.81,\boxed{14.1},14.1,False
+22a82f3f,12.30,\boxed{12.07},12.07,False
+cc3ea471,-!!,\boxed{'},',False
+13ad7bce,-73,\boxed{26},26,False
+2f5959c9,7141,\boxed{164},164,False
+5cc4cf10,10000000,\boxed{00000000},00000000,False
+3860736d,the wise teacher writes,\boxed{the wise student writes},the wise student writes,False
+b6ebacd5,20.77,\boxed{20.19},20.19,False
+8e1cff16,27.46,\boxed{27.10},27.10,False
+ef37f996,23.85,\boxed{22.1},22.1,False
+863ce62a,turtle creates the golden message,\boxed{dragon studies the golden crystal},dragon studies the golden crystal,False
+9aa48392,151,\boxed{11},11,False
+1f549473,63.11,\boxed{64.6},64.6,False
+468bf9fc,>!%,\boxed{&},&,False
+fd724227,137.11,\boxed{139.1},139.1,False
+d0dd2df7,16.03,\boxed{16.8},16.8,False
+a0f33afd,14.34,\boxed{14.1},14.1,False
+3632f6d0,145.68,\boxed{141.1},141.1,False
+f2a167e5,10101110,\boxed{00001110},00001110,False
+d9bdf754,00011111,\boxed{00111111},00111111,False
+d2d8c935,the curious student follows,\boxed{the colorful teacher follows},the colorful teacher follows,False
+373be396,king discovers around mountain,\boxed{king discovers beyond mountain},king discovers beyond mountain,False
+0a2b9109,-?:,\boxed{^},^,False
+f5059127,11111100,\boxed{01101110},01101110,False
+ddafe911,23.19,\boxed{23.91},23.91,False
+59298dec,39.30,\boxed{40.08},40.08,False
+17fc6883,43.27,\boxed{42.1},42.1,False
+6c9e4485,6253,\boxed{5213},5213,False
+1a6c0053,3.53,\boxed{2.8},2.8,False
+6540cf61,120.57,\boxed{126.1},126.1,False
+b9f0d732,the hidden student sees,\boxed{the golden student sees},the golden student sees,False
+157228d7,35,\boxed{*35},*35,False
+05109055,`>%/,\boxed{<},<,False
+6e44fdb5,47.04,\boxed{45.6},45.6,False
+562cfc29,11011001,\boxed{01010100},01010100,False
+0e2d6796,|)],\boxed{`]},`],False
+ab0eee3d,00010111,\boxed{11001110},11001110,False
+82d937aa,11111011,\boxed{01111010},01111010,False
+bd214062,01011001,\boxed{10111001},10111001,False
+e60752d5,26.46,\boxed{25.84},25.84,False
+a34bd133,34.07,\boxed{36.1},36.1,False
+47e63612,60.89,\boxed{80.1},80.1,False
+d691d4f5,79.7,\boxed{91.1},91.1,False
+f2ae9e31,the dark alice sees,\boxed{the dark dragon sees},the dark dragon sees,False
+db88075e,bird found the silver message,\boxed{bird found the silver potion},bird found the silver potion,False
+5dd3345c,11111111,\boxed{00111111},00111111,False
+94d5d7dd,dragon follows book,\boxed{dragon follows key},dragon follows key,False
+a1523a63,87,\boxed{95},95,False
+25705f72,11110000,\boxed{01111100},01111100,False
+a660cb06,9.21,\boxed{8.6},8.6,False
+c37e694c,{&\\,\boxed{/},/,False
+5045ed9a,queen explores castle,\boxed{mouse explores puzzle},mouse explores puzzle,False
+eea91b82,00101111,\boxed{11111111},11111111,False
+2652af6d,19.37,\boxed{19.09},19.09,False
+971d2540,the ancient rabbit reads,\boxed{the curious rabbit draws},the curious rabbit draws,False
+4e7d1773,^:?:,\boxed{$},$,False
+eeac10f6,11011110,\boxed{00111101},00111101,False
+6617d3b0,00000000,\boxed{00000011},00000011,False
+6f3ba33d,29.29,\boxed{37.1},37.1,False
+5e275438,the silver student explores,\boxed{the golden student explores},the golden student explores,False
+264b2118,00010100,\boxed{01101100},01101100,False
+4c7ed129,the curious student chases,\boxed{the curious princess chases},the curious princess chases,False
+ae50c309,25.33,\boxed{25.01},25.01,False
+48ae04f6,00000010,\boxed{00000000},00000000,False
+001c63cb,wizard creates secret,\boxed{wizard follows secret},wizard follows secret,False
+88f6a807,student sees near valley,\boxed{student sees near village},student sees near village,False
+861dc9fe,42.32,\boxed{43.51},43.51,False
+484075a4,the clever mouse dreams,\boxed{the silver mouse writes},the silver mouse writes,False
+eb68289b,-82,\boxed{-8},-8,False
+89c1c859,12.55,\boxed{12.40},12.40,False
+0f17279e,132.44,\boxed{134.0},134.0,False
+c35484c1,bird chases story,\boxed{bird writes door},bird writes door,False
+7ba328ff,the colorful bird watches,\boxed{the colorful bird chases},the colorful bird chases,False
+a59e2ff7,01011111,\boxed{00111111},00111111,False
+6fc09c9b,hatter watches secret,\boxed{turtle creates message},turtle creates message,False
+c6a5f3f8,160.32,\boxed{174.1},174.1,False
+5daa92e3,00000101,\boxed{00000001},00000001,False
+b9fb3018,26.81,\boxed{24.6},24.6,False
+27da7eaa,112.37,\boxed{107.4},107.4,False
+d2957330,54.85,\boxed{54.12},54.12,False
+823c8278,|:,\boxed{^},^,False
+7900ca32,24.90,\boxed{25.51},25.51,False
+5c3be436,133.36,\boxed{139.1},139.1,False
+5f06f595,7.8,\boxed{7.1},7.1,False
+f84652b8,7.93,\boxed{8.21},8.21,False
+5f6b6ea3,6,\boxed{11},11,False
+6fe4a872,hatter draws crystal,\boxed{hatter found crystal},hatter found crystal,False
+bcf66e1d,39.43,\boxed{40.01},40.01,False
+72e80455,83.62,\boxed{96.1},96.1,False
+6cdcf6d9,187.28,\boxed{191.1},191.1,False
+2d7edafd,:{&,\boxed{/},/,False
+6fd6e409,the dark queen creates,\boxed{the wise queen watches},the wise queen watches,False
+ac2b67ad,78.59,\boxed{79.5},79.5,False
+ccddd1be,72.09,\boxed{80.1},80.1,False
+0c0955b1,128.84,\boxed{170.1},170.1,False
+47998fb4,00111100,\boxed{00011101},00011101,False
+eb354353,\%<%,\boxed{&/},&/,False
+5a35e698,[\),\boxed{[},[,False
+1520013c,[[,\boxed{?},?,False
+a99ea0f0,00101011,\boxed{00011010},00011010,False
+5c66563b,75.35,\boxed{66.1},66.1,False
+012fb81b,10000100,\boxed{00000000},00000000,False
+a1cc9071,wizard writes the secret mirror,\boxed{wizard writes the hidden garden},wizard writes the hidden garden,False
+1c3752f1,the bright princess discovers,\boxed{the silver princess discovers},the silver princess discovers,False
+697726da,alice imagines in garden,\boxed{alice imagines in school},alice imagines in school,False
+538de189,bird explores the mysterious story,\boxed{bird explores the mysterious book},bird explores the mysterious book,False
+7c6fce02,:<,\boxed{#},#,False
+2b636d2d,00101101,\boxed{00000001},00000001,False
+27f3491e,turtle creates the secret map,\boxed{turtle writes the secret key},turtle writes the secret key,False
+15950a46,}@<[,\boxed{[},[,False
+ed80cf3e,1431,\boxed{45},45,False
+e042dedb,44.71,\boxed{45.82},45.82,False
+d3492ebf,106.09,\boxed{103.0},103.0,False
+eb99214c,the wise student creates,\boxed{the wise princess creates},the wise princess creates,False
+0e70c867,01000000,\boxed{11100000},11100000,False
+b8f00ea7,5615,\boxed{54},54,False
+6079c08f,wizard chases the hidden puzzle,\boxed{dragon chases the silver puzzle},dragon chases the silver puzzle,False
+680b97a2,127.49,\boxed{116.1},116.1,False
+0e3307ba,:$,\boxed{^&},^&,False
+c0f7a38b,teacher discovers map,\boxed{student explores map},student explores map,False
+9a784b03,44.39,\boxed{45.00},45.00,False
+733e5dd6,19.87,\boxed{19.10},19.10,False
+38236526,the hidden alice imagines,\boxed{the hidden mouse imagines},the hidden mouse imagines,False
+b8560600,student reads under garden,\boxed{teacher reads around school},teacher reads around school,False
+f6b107bc,student studies the magical message,\boxed{knight studies the curious treasure},knight studies the curious treasure,False
+767174e8,]},\boxed{?},?,False
+7a962e17,361,\boxed{135},135,False
+cb59c08c,112.53,\boxed{108.1},108.1,False
+111296b0,01001101,\boxed{01100101},01100101,False
+861cb154,2271,\boxed{58},58,False
+dffa1522,the secret turtle draws,\boxed{the silver wizard draws},the silver wizard draws,False
+0e19e1bb,48.92,\boxed{50.92},50.92,False
+331e68d6,teacher writes the golden secret,\boxed{teacher writes the bright castle},teacher writes the bright castle,False
+842c7710,///,\boxed{]#},]#,False
+ff148329,24.46,\boxed{24.16},24.16,False
+3bdb85cf,01000100,\boxed{00000100},00000100,False
+7d37ca05,dragon sees above cave,\boxed{dragon sees under sea},dragon sees under sea,False
+eb59e331,131.38,\boxed{127.1},127.1,False
+a350865e,41.36,\boxed{46.0},46.0,False
+f2fb04d8,45.33,\boxed{45.91},45.91,False
+58597938,teacher discovers in ocean,\boxed{student discovers in school},student discovers in school,False
+c3ab014b,00010010,\boxed{00001100},00001100,False
+201255d5,the silver rabbit discovers,\boxed{the silver hatter discovers},the silver hatter discovers,False
+e62b6ae9,[[`<,\boxed{!^},!^,False
+739451ab,11011111,\boxed{10111111},10111111,False
+b647609f,mouse writes near garden,\boxed{mouse writes near school},mouse writes near school,False
+1f73f1f0,81.65,\boxed{70.1},70.1,False
+b3ce071c,11111011,\boxed{00011000},00011000,False
+9d71fece,"""\",\boxed{&},&,False
+c536c44c,01000101,\boxed{10000001},10000001,False
+065abaf6,&/:\,\boxed{&},&,False
+557f9a4a,teacher writes mirror,\boxed{teacher writes puzzle},teacher writes puzzle,False
+6fae6379,01100111,\boxed{00000011},00000011,False
+38203f70,39.59,\boxed{38.8},38.8,False
+4bb7eecb,hatter discovers inside island,\boxed{wizard explores beyond castle},wizard explores beyond castle,False
+c04024c2,144.53,\boxed{149.1},149.1,False
+bfe3a828,the dark bird follows,\boxed{the dark king follows},the dark king follows,False
+ca2bb5f5,10.66,\boxed{13.6},13.6,False
+a4e4ec1d,>!,\boxed{-},-,False
+10b71e8a,#}:,\boxed{>#},>#,False
+9720a8ea,the bright princess creates,\boxed{the silver princess watches},the silver princess watches,False
+ebe82de2,26.42,\boxed{26.1},26.1,False
+5303f9a4,the hidden dragon imagines,\boxed{the silver rabbit explores},the silver rabbit explores,False
+ff20f28e,17.55,\boxed{17.80},17.80,False
+971d1c24,turtle sees the clever forest,\boxed{turtle sees the golden forest},turtle sees the golden forest,False
+2e0f64b7,01110001,\boxed{11111111},11111111,False
+1f07abea,19.24,\boxed{18.6},18.6,False
+d6ceda8e,01000101,\boxed{11000101},11000101,False
+3a7fe2a6,&)!,\boxed{&%},&%,False
+59407f0d,mouse studies the clever mirror,\boxed{mouse studies the bright mirror},mouse studies the bright mirror,False
+4440e09b,26.38,\boxed{29.0},29.0,False
+9a5b6b28,^22,\boxed{^3},^3,False
+7c494c86,22.62,\boxed{22.08},22.08,False
+6f0a117d,-[\,\boxed{^},^,False
+1271e669,the clever dragon creates,\boxed{the silver rabbit studies},the silver rabbit studies,False
+53f74620,12.62,\boxed{13.11},13.11,False
+536b705e,the dark rabbit writes,\boxed{the wise rabbit chases},the wise rabbit chases,False
+d01aeeda,01101111,\boxed{10100110},10100110,False
+8c9e95a4,197.61,\boxed{195.1},195.1,False
