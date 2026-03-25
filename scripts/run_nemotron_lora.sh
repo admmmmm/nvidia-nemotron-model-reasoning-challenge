@@ -6,7 +6,9 @@ cd "$REPO_ROOT"
 
 if [[ -f .env.server ]]; then
   # shellcheck disable=SC1091
+  set -a
   source .env.server
+  set +a
 fi
 
 ENV_NAME="${ENV_NAME:-nemotron}"
