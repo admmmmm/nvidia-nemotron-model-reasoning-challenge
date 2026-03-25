@@ -1,37 +1,26 @@
-{
-  "run_name": "nemotron_lora_v0",
-  "pid": 5478,
-  "status": "failed",
-  "updated_at": "2026-03-25T05:23:56+00:00",
-  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_051756.log",
-  "gpu": "NVIDIA A100-SXM4-40GB, 18 MiB, 40960 MiB, 0 %",
-  "memory": "              total        used        free      shared  buff/cache   available
-Mem:           62Gi       895Mi        53Gi       6.0Mi       8.4Gi        61Gi
-Swap:         8.0Gi        17Mi       8.0Gi",
-  "tail": "Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
 huggingface login ok
 Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:54, 19.54s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:40<03:43, 20.36s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:02<03:31, 21.13s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:24<03:12, 21.40s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:46<02:53, 21.69s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [02:09<02:34, 22.09s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:30<02:10, 21.75s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:51<01:47, 21.42s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [03:12<01:25, 21.27s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:33<01:04, 21.37s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:54<00:42, 21.13s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [04:14<00:20, 20.78s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:26<00:00, 18.05s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:26<00:00, 20.46s/it]
 Traceback (most recent call last):
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py\", line 196, in _run_module_as_main
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py", line 196, in _run_module_as_main
     return _run_code(code, main_globals, None,
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py\", line 86, in _run_code
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py", line 86, in _run_code
     exec(code, run_globals)
-  File \"/root/nemotron/src/train/sft_local.py\", line 343, in <module>
+  File "/root/nemotron/src/train/sft_local.py", line 343, in <module>
     main()
-  File \"/root/nemotron/src/train/sft_local.py\", line 282, in main
+  File "/root/nemotron/src/train/sft_local.py", line 282, in main
     model = build_model(args)
-  File \"/root/nemotron/src/train/sft_local.py\", line 241, in build_model
+  File "/root/nemotron/src/train/sft_local.py", line 241, in build_model
     model = AutoModelForCausalLM.from_pretrained(args.model_name, **model_kwargs)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py\", line 597, in from_pretrained
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 597, in from_pretrained
     return model_class.from_pretrained(
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/modeling_utils.py\", line 277, in _wrapper
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
     return func(*args, **kwargs)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/modeling_utils.py\", line 5140, in from_pretrained
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/modeling_utils.py", line 5140, in from_pretrained
     dispatch_model(model, **device_map_kwargs)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/accelerate/big_modeling.py\", line 512, in dispatch_model
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/accelerate/big_modeling.py", line 512, in dispatch_model
     model.to(device)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/modeling_utils.py\", line 4333, in to
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4333, in to
     raise ValueError(
 ValueError: Calling `to()` is not supported for `4-bit` quantized models with the installed version of bitsandbytes. The current device is `cuda:0`. If you intended to move the model, please install bitsandbytes >= 0.43.2.
-Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_051756.log"
-}
+Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_051756.log
