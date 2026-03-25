@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 import torch
+from torch.utils import _pytree as torch_pytree
 from datasets import Dataset
 from peft import get_peft_model, prepare_model_for_kbit_training
 from transformers import (
@@ -24,6 +25,10 @@ from src.train.lora_utils import build_lora_config
 
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 NEMOTRON_4BIT_SKIP_MODULES = ["in_proj", "out_proj", "x_proj", "dt_proj", "lm_head"]
+
+
+if not hasattr(torch_pytree, "register_pytree_node") and hasattr(torch_pytree, "_register_pytree_node"):
+    torch_pytree.register_pytree_node = torch_pytree._register_pytree_node
 
 
 @dataclass
@@ -234,7 +239,7 @@ def build_model(
         quant_kwargs: dict[str, Any] = dict(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_compute_dtype=torch.bfloat16,
             bnb_4bit_use_double_quant=True,
         )
         if "nemotron" in model_name.lower():
@@ -326,7 +331,7 @@ def main() -> None:
         save_steps=args.save_steps,
         eval_steps=args.eval_steps,
         save_total_limit=2,
-        bf16=False,
+        bf16=use_nemotron_safe_precision,
         fp16=not use_nemotron_safe_precision,
         save_strategy="steps",
         report_to="none",
