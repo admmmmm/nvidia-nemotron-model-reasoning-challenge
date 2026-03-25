@@ -1,0 +1,35 @@
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+huggingface login ok
+{
+  "train_file": "train.csv",
+  "seed": 42,
+  "validation_size": 0.05,
+  "train_count": 9025,
+  "val_count": 475,
+  "summary": {
+    "count": 9500.0,
+    "avg_prompt_chars": 301.5158947368421,
+    "avg_answer_chars": 8.39378947368421,
+    "max_prompt_chars": 510.0,
+    "max_answer_chars": 39.0
+  }
+}
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:57, 19.81s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:40<03:45, 20.51s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:03<03:32, 21.28s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:24<03:13, 21.54s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:47<02:54, 21.83s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [02:10<02:35, 22.19s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:30<02:10, 21.69s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:51<01:47, 21.49s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [03:12<01:25, 21.29s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:33<01:03, 21.12s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:55<00:42, 21.24s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [04:14<00:20, 20.80s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:27<00:00, 18.32s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:27<00:00, 20.57s/it]
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Traceback (most recent call last):
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/nemotron/src/train/sft_local.py", line 343, in <module>
+    main()
+  File "/root/nemotron/src/train/sft_local.py", line 332, in main
+    trainer.train()
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 2449, in _inner_training_loop
+    model = self._wrap_model(self.model_wrapped)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 2067, in _wrap_model
+    if self.accelerator.unwrap_model(model, keep_torch_compile=False) is not model:
+TypeError: Accelerator.unwrap_model() got an unexpected keyword argument 'keep_torch_compile'
+Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_050255.log
