@@ -313,6 +313,7 @@ def main() -> None:
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    use_nemotron_safe_precision = "nemotron" in args.model_name.lower()
     training_kwargs = dict(
         output_dir=str(output_dir),
         num_train_epochs=args.num_train_epochs,
@@ -326,7 +327,7 @@ def main() -> None:
         eval_steps=args.eval_steps,
         save_total_limit=2,
         bf16=False,
-        fp16=True,
+        fp16=not use_nemotron_safe_precision,
         save_strategy="steps",
         report_to="none",
         remove_unused_columns=False,
