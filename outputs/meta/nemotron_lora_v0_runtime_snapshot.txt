@@ -1,8 +1,8 @@
-timestamp=2026-03-25T05:37:35+00:00
+timestamp=2026-03-25T05:47:39+00:00
 hostname=ubuntu20
 run_name=nemotron_lora_v0
 --- nvidia-smi ---
-Wed Mar 25 05:37:35 2026       
+Wed Mar 25 05:47:39 2026       
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -24,7 +24,7 @@ Wed Mar 25 05:37:35 2026
 +---------------------------------------------------------------------------------------+
 --- free -h ---
               total        used        free      shared  buff/cache   available
-Mem:           62Gi       929Mi        48Gi       6.0Mi        13Gi        61Gi
+Mem:           62Gi       925Mi        45Gi       6.0Mi        16Gi        61Gi
 Swap:         8.0Gi        17Mi       8.0Gi
 --- conda python ---
 /home/vipuser/anaconda3/bin/python
