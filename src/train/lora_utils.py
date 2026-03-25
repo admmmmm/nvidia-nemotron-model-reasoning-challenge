@@ -3,8 +3,20 @@ from __future__ import annotations
 from peft import LoraConfig
 
 
+NEMOTRON_TARGET_MODULES = [
+    "linear_qkv",
+    "linear_proj",
+    "linear_fc1",
+    "linear_fc2",
+    "in_proj",
+    "out_proj",
+]
+
+
 def choose_target_modules(model_name: str) -> list[str]:
     lowered = model_name.lower()
+    if "nemotron" in lowered:
+        return NEMOTRON_TARGET_MODULES
     if "qwen" in lowered:
         return [
             "q_proj",
