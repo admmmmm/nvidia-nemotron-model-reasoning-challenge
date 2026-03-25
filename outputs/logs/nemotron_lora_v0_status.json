@@ -1,51 +1,51 @@
 {
   "run_name": "nemotron_lora_v0",
-  "pid": 6896,
+  "pid": 8545,
   "status": "failed",
-  "updated_at": "2026-03-25T05:41:46+00:00",
-  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_054046.log",
+  "updated_at": "2026-03-25T06:25:47+00:00",
+  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_062047.log",
   "gpu": "NVIDIA A100-SXM4-40GB, 18 MiB, 40960 MiB, 0 %",
   "memory": "              total        used        free      shared  buff/cache   available
-Mem:           62Gi       933Mi        47Gi       6.0Mi        14Gi        61Gi
-Swap:         8.0Gi        17Mi       8.0Gi",
-  "tail": "Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: 'Could not load this library: /home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torchvision/image.so'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
-  warn(
-/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12020). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
-  return torch._C._cuda_getDeviceCount() > 0
-Traceback (most recent call last):
-  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 64, in <module>
-    from mamba_ssm.ops.triton.layernorm_gated import rmsnorm_fn
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/__init__.py\", line 3, in <module>
-    from mamba_ssm.ops.selective_scan_interface import selective_scan_fn, mamba_inner_fn
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/selective_scan_interface.py\", line 16, in <module>
-    import selective_scan_cuda
-ImportError: /home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/selective_scan_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN2at4_ops10zeros_like4callERKNS_6TensorEN3c108optionalINS5_10ScalarTypeEEENS6_INS5_6LayoutEEENS6_INS5_6DeviceEEENS6_IbEENS6_INS5_12MemoryFormatEEE
+Mem:           62Gi       849Mi        53Gi       6.0Mi       8.4Gi        61Gi
+Swap:         8.0Gi        72Mi       7.9Gi",
+  "tail": "  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 715, in forward
+    return self.cuda_kernels_forward(hidden_states, cache_params, cache_position, attention_mask)
+  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 429, in cuda_kernels_forward
+    out = mamba_split_conv1d_scan_combined(
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 912, in mamba_split_conv1d_scan_combined
+    return MambaSplitConv1dScanCombinedFn.apply(zxbcdt, conv1d_weight, conv1d_bias, dt_bias, A, D, chunk_size, initial_states, seq_idx, dt_limit, return_final_states, activation, rmsnorm_weight, rmsnorm_eps, outproj_weight, outproj_bias, headdim, ngroups, norm_before_gate)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/autograd/function.py\", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/cuda/amp/autocast_mode.py\", line 113, in decorate_fwd
+    return fwd(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 761, in forward
+    causal_conv1d_cuda.causal_conv1d_fwd(rearrange(xBC, \"b s d -> b d s\"),
+TypeError: causal_conv1d_fwd(): incompatible function arguments. The following argument types are supported:
+    1. (arg0: torch.Tensor, arg1: torch.Tensor, arg2: Optional[torch.Tensor], arg3: Optional[torch.Tensor], arg4: bool) -> torch.Tensor
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py\", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py\", line 86, in _run_code
-    exec(code, run_globals)
-  File \"/root/nemotron/src/train/sft_local.py\", line 343, in <module>
-    main()
-  File \"/root/nemotron/src/train/sft_local.py\", line 282, in main
-    model = build_model(args)
-  File \"/root/nemotron/src/train/sft_local.py\", line 241, in build_model
-    model = AutoModelForCausalLM.from_pretrained(args.model_name, **model_kwargs)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py\", line 586, in from_pretrained
-    model_class = get_class_from_dynamic_module(
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/dynamic_module_utils.py\", line 616, in get_class_from_dynamic_module
-    return get_class_in_module(class_name, final_module, force_reload=force_download)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/dynamic_module_utils.py\", line 311, in get_class_in_module
-    module_spec.loader.exec_module(module)
-  File \"<frozen importlib._bootstrap_external>\", line 883, in exec_module
-  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed
-  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 66, in <module>
-    raise ImportError(\"mamba-ssm is required by the Mamba model but cannot be imported\")
-ImportError: mamba-ssm is required by the Mamba model but cannot be imported
-Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_054046.log"
+Invoked with: tensor([[[-8.8257e-02, -1.0986e+00,  3.4497e-01,  ...,  8.6914e-02,
+           1.8774e-01,  3.4497e-01],
+         [ 9.4873e-01, -8.5938e-01,  7.0166e-01,  ..., -1.0376e-01,
+           5.9277e-01,  7.0166e-01],
+         [-6.4746e-01, -4.3677e-01, -4.7803e-01,  ..., -6.0425e-03,
+           1.0791e+00, -4.7803e-01],
+         ...,
+         [-1.0205e+00,  4.8945e+00, -3.6094e+00,  ..., -4.1406e+00,
+          -2.4878e-01, -3.6094e+00],
+         [ 2.1504e+00, -2.2031e+00,  1.2555e+01,  ...,  1.1656e+01,
+           3.3574e+00,  1.2555e+01],
+         [-7.7393e-01, -7.1680e-01, -1.0586e+00,  ...,  7.3438e-01,
+           1.1377e+00, -1.0586e+00]]], device='cuda:0'), tensor([[-0.0015,  0.0664,  0.0019, -0.0015],
+        [ 0.0012,  0.0002,  0.0874, -0.0027],
+        [ 0.0004,  0.0046, -0.0659,  0.0004],
+        ...,
+        [ 0.0104,  0.0525,  0.1426,  0.1562],
+        [-0.0117, -0.0150, -0.0339,  0.1196],
+        [-0.0454, -0.0825,  0.0334, -0.0474]], device='cuda:0'), Parameter containing:
+tensor([ 0.0059, -0.0249,  0.0093,  ..., -0.2520, -0.0618, -0.0674],
+       device='cuda:0'), None, None, None, True
+  0%|          | 0/565 [00:00<?, ?it/s]
+Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_062047.log"
 }
