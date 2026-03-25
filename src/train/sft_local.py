@@ -23,6 +23,7 @@ from src.train.lora_utils import build_lora_config
 
 
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+NEMOTRON_4BIT_SKIP_MODULES = ["in_proj", "out_proj", "x_proj", "dt_proj"]
 
 
 @dataclass
@@ -195,12 +196,17 @@ def build_model(model_name: str, load_in_4bit: bool) -> AutoModelForCausalLM:
     }
 
     if load_in_4bit:
-        model_kwargs["quantization_config"] = BitsAndBytesConfig(
+        quant_kwargs: dict[str, Any] = dict(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
             bnb_4bit_compute_dtype=torch.float16,
             bnb_4bit_use_double_quant=True,
         )
+        if "nemotron" in model_name.lower():
+            # Empirically required on the HF remote-code path: Mamba kernel
+            # projections cannot be passed through the generic 4-bit wrapper.
+            quant_kwargs["llm_int8_skip_modules"] = NEMOTRON_4BIT_SKIP_MODULES
+        model_kwargs["quantization_config"] = BitsAndBytesConfig(**quant_kwargs)
     else:
         model_kwargs["torch_dtype"] = torch.float16
 

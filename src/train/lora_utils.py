@@ -4,12 +4,13 @@ from peft import LoraConfig
 
 
 NEMOTRON_TARGET_MODULES = [
-    "linear_qkv",
-    "linear_proj",
-    "linear_fc1",
-    "linear_fc2",
-    "in_proj",
-    "out_proj",
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "down_proj",
+    "up_proj",
+    "gate_proj",
 ]
 
 
