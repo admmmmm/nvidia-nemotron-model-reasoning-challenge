@@ -33,4 +33,4 @@ Thumbs.db
 train.csv
 test.csv
 test_prompt.txt
-
+offline_bundle/
