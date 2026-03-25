@@ -1,51 +1,14 @@
 {
   "run_name": "nemotron_lora_v0",
-  "pid": 8545,
-  "status": "failed",
-  "updated_at": "2026-03-25T06:25:47+00:00",
-  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_062047.log",
-  "gpu": "NVIDIA A100-SXM4-40GB, 18 MiB, 40960 MiB, 0 %",
+  "pid": 12820,
+  "status": "running",
+  "updated_at": "2026-03-25T06:58:01+00:00",
+  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_065701.log",
+  "gpu": "NVIDIA A100-SXM4-40GB, 19916 MiB, 40960 MiB, 3 %",
   "memory": "              total        used        free      shared  buff/cache   available
-Mem:           62Gi       849Mi        53Gi       6.0Mi       8.4Gi        61Gi
-Swap:         8.0Gi        72Mi       7.9Gi",
-  "tail": "  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 715, in forward
-    return self.cuda_kernels_forward(hidden_states, cache_params, cache_position, attention_mask)
-  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 429, in cuda_kernels_forward
-    out = mamba_split_conv1d_scan_combined(
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 912, in mamba_split_conv1d_scan_combined
-    return MambaSplitConv1dScanCombinedFn.apply(zxbcdt, conv1d_weight, conv1d_bias, dt_bias, A, D, chunk_size, initial_states, seq_idx, dt_limit, return_final_states, activation, rmsnorm_weight, rmsnorm_eps, outproj_weight, outproj_bias, headdim, ngroups, norm_before_gate)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/autograd/function.py\", line 539, in apply
-    return super().apply(*args, **kwargs)  # type: ignore[misc]
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/cuda/amp/autocast_mode.py\", line 113, in decorate_fwd
-    return fwd(*args, **kwargs)
-  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 761, in forward
-    causal_conv1d_cuda.causal_conv1d_fwd(rearrange(xBC, \"b s d -> b d s\"),
-TypeError: causal_conv1d_fwd(): incompatible function arguments. The following argument types are supported:
-    1. (arg0: torch.Tensor, arg1: torch.Tensor, arg2: Optional[torch.Tensor], arg3: Optional[torch.Tensor], arg4: bool) -> torch.Tensor
-
-Invoked with: tensor([[[-8.8257e-02, -1.0986e+00,  3.4497e-01,  ...,  8.6914e-02,
-           1.8774e-01,  3.4497e-01],
-         [ 9.4873e-01, -8.5938e-01,  7.0166e-01,  ..., -1.0376e-01,
-           5.9277e-01,  7.0166e-01],
-         [-6.4746e-01, -4.3677e-01, -4.7803e-01,  ..., -6.0425e-03,
-           1.0791e+00, -4.7803e-01],
-         ...,
-         [-1.0205e+00,  4.8945e+00, -3.6094e+00,  ..., -4.1406e+00,
-          -2.4878e-01, -3.6094e+00],
-         [ 2.1504e+00, -2.2031e+00,  1.2555e+01,  ...,  1.1656e+01,
-           3.3574e+00,  1.2555e+01],
-         [-7.7393e-01, -7.1680e-01, -1.0586e+00,  ...,  7.3438e-01,
-           1.1377e+00, -1.0586e+00]]], device='cuda:0'), tensor([[-0.0015,  0.0664,  0.0019, -0.0015],
-        [ 0.0012,  0.0002,  0.0874, -0.0027],
-        [ 0.0004,  0.0046, -0.0659,  0.0004],
-        ...,
-        [ 0.0104,  0.0525,  0.1426,  0.1562],
-        [-0.0117, -0.0150, -0.0339,  0.1196],
-        [-0.0454, -0.0825,  0.0334, -0.0474]], device='cuda:0'), Parameter containing:
-tensor([ 0.0059, -0.0249,  0.0093,  ..., -0.2520, -0.0618, -0.0674],
-       device='cuda:0'), None, None, None, True
-  0%|          | 0/565 [00:00<?, ?it/s]
-Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_062047.log"
+Mem:           62Gi       6.4Gi        39Gi        23Mi        16Gi        55Gi
+Swap:         8.0Gi        95Mi       7.9Gi",
+  "tail": "Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+huggingface login ok
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:57, 19.81s/it]"
 }
