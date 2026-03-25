@@ -1,14 +1,51 @@
 {
   "run_name": "nemotron_lora_v0",
   "pid": 12820,
-  "status": "running",
-  "updated_at": "2026-03-25T06:58:01+00:00",
+  "status": "failed",
+  "updated_at": "2026-03-25T07:03:01+00:00",
   "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_065701.log",
-  "gpu": "NVIDIA A100-SXM4-40GB, 19916 MiB, 40960 MiB, 3 %",
+  "gpu": "NVIDIA A100-SXM4-40GB, 18 MiB, 40960 MiB, 0 %",
   "memory": "              total        used        free      shared  buff/cache   available
-Mem:           62Gi       6.4Gi        39Gi        23Mi        16Gi        55Gi
-Swap:         8.0Gi        95Mi       7.9Gi",
-  "tail": "Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:57, 19.81s/it]"
+Mem:           62Gi       874Mi        53Gi       6.0Mi       8.1Gi        61Gi
+Swap:         8.0Gi       116Mi       7.9Gi",
+  "tail": "    return forward_call(*args, **kwargs)
+  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 1489, in forward
+    hidden_states = self._gradient_checkpointing_func(
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/_compile.py\", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py\", line 328, in _fn
+    return fn(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/_dynamo/external_utils.py\", line 17, in inner
+    return fn(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/utils/checkpoint.py\", line 451, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/autograd/function.py\", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/utils/checkpoint.py\", line 230, in forward
+    outputs = run_function(*args)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 777, in forward
+    hidden_states = self.mixer(
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py\", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 715, in forward
+    return self.cuda_kernels_forward(hidden_states, cache_params, cache_position, attention_mask)
+  File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 429, in cuda_kernels_forward
+    out = mamba_split_conv1d_scan_combined(
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 912, in mamba_split_conv1d_scan_combined
+    return MambaSplitConv1dScanCombinedFn.apply(zxbcdt, conv1d_weight, conv1d_bias, dt_bias, A, D, chunk_size, initial_states, seq_idx, dt_limit, return_final_states, activation, rmsnorm_weight, rmsnorm_eps, outproj_weight, outproj_bias, headdim, ngroups, norm_before_gate)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/autograd/function.py\", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/cuda/amp/autocast_mode.py\", line 113, in decorate_fwd
+    return fwd(*args, **kwargs)
+  File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 801, in forward
+    out = F.linear(out, outproj_weight, outproj_bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (153x4096 and 1x5505024)
+  0%|          | 0/565 [00:32<?, ?it/s]
+Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_065701.log"
 }
