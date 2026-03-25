@@ -1,13 +1,13 @@
 {
   "run_name": "nemotron_lora_v0",
-  "pid": 12820,
+  "pid": 3438,
   "status": "failed",
-  "updated_at": "2026-03-25T07:03:01+00:00",
-  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_065701.log",
+  "updated_at": "2026-03-25T10:15:41+00:00",
+  "log_file": "outputs/logs/nemotron_lora_v0_launcher_20260325_101041.log",
   "gpu": "NVIDIA A100-SXM4-40GB, 18 MiB, 40960 MiB, 0 %",
   "memory": "              total        used        free      shared  buff/cache   available
-Mem:           62Gi       874Mi        53Gi       6.0Mi       8.1Gi        61Gi
-Swap:         8.0Gi       116Mi       7.9Gi",
+Mem:           47Gi       833Mi        27Gi       6.0Mi        18Gi        45Gi
+Swap:         8.0Gi        84Mi       7.9Gi",
   "tail": "    return forward_call(*args, **kwargs)
   File \"/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py\", line 1489, in forward
     hidden_states = self._gradient_checkpointing_func(
@@ -46,6 +46,6 @@ Swap:         8.0Gi       116Mi       7.9Gi",
   File \"/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py\", line 801, in forward
     out = F.linear(out, outproj_weight, outproj_bias)
 RuntimeError: mat1 and mat2 shapes cannot be multiplied (153x4096 and 1x5505024)
-  0%|          | 0/565 [00:32<?, ?it/s]
-Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_065701.log"
+  0%|          | 0/565 [00:06<?, ?it/s]
+Training failed. Log: outputs/logs/nemotron_lora_v0_20260325_101041.log"
 }
