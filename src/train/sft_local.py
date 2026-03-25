@@ -309,9 +309,6 @@ def main() -> None:
             dropout=args.lora_dropout,
         ),
     )
-    for name, param in model.named_parameters():
-        if "lora" not in name.lower():
-            param.requires_grad_(False)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
