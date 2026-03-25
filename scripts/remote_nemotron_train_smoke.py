@@ -12,6 +12,11 @@ def build_python_script(
     load_in_4bit: bool,
     do_backward: bool,
     max_length: int,
+    min_valid_labels: int,
+    sample_search_limit: int,
+    max_memory_gpu: str,
+    max_memory_cpu: str,
+    local_files_only: bool,
 ) -> str:
     lines: list[str] = [
         "import os",
@@ -25,11 +30,21 @@ def build_python_script(
         f"SKIP_MODULES = {skip_modules!r}",
         f"LOAD_IN_4BIT = {load_in_4bit!r}",
         f"MAX_LENGTH = {max_length!r}",
+        f"MIN_VALID_LABELS = {min_valid_labels!r}",
+        f"SAMPLE_SEARCH_LIMIT = {sample_search_limit!r}",
+        f"MAX_MEMORY_GPU = {max_memory_gpu!r}",
+        f"MAX_MEMORY_CPU = {max_memory_cpu!r}",
+        f"LOCAL_FILES_ONLY = {local_files_only!r}",
         "",
         "print('target_modules=', TARGET_MODULES, flush=True)",
         "print('skip_modules=', SKIP_MODULES, flush=True)",
         "print('load_in_4bit=', LOAD_IN_4BIT, flush=True)",
         "print('max_length=', MAX_LENGTH, flush=True)",
+        "print('min_valid_labels=', MIN_VALID_LABELS, flush=True)",
+        "print('sample_search_limit=', SAMPLE_SEARCH_LIMIT, flush=True)",
+        "print('max_memory_gpu=', MAX_MEMORY_GPU, flush=True)",
+        "print('max_memory_cpu=', MAX_MEMORY_CPU, flush=True)",
+        "print('local_files_only=', LOCAL_FILES_ONLY, flush=True)",
         "",
         "tokenizer = AutoTokenizer.from_pretrained(os.environ['MODEL_NAME'], trust_remote_code=True, use_fast=True)",
         "if tokenizer.pad_token is None:",
@@ -40,15 +55,30 @@ def build_python_script(
         "if not records:",
         "    raise SystemExit('no train records found')",
         "",
-        "example = encode_example(",
-        "    record=records[0],",
-        "    tokenizer=tokenizer,",
-        "    max_length=MAX_LENGTH,",
-        "    system_prompt=os.environ.get('SYSTEM_PROMPT', DEFAULT_SYSTEM_PROMPT),",
-        ")",
         "collator = DataCollatorForCausalLM(tokenizer.pad_token_id)",
-        "batch = collator([{'input_ids': example.input_ids, 'attention_mask': example.attention_mask, 'labels': example.labels}])",
-        "valid_labels = int((batch['labels'] != -100).sum().item())",
+        "selected_index = None",
+        "example = None",
+        "batch = None",
+        "valid_labels = -1",
+        "search_limit = min(len(records), SAMPLE_SEARCH_LIMIT)",
+        "for idx in range(search_limit):",
+        "    candidate = encode_example(",
+        "        record=records[idx],",
+        "        tokenizer=tokenizer,",
+        "        max_length=MAX_LENGTH,",
+        "        system_prompt=os.environ.get('SYSTEM_PROMPT', DEFAULT_SYSTEM_PROMPT),",
+        "    )",
+        "    candidate_batch = collator([{'input_ids': candidate.input_ids, 'attention_mask': candidate.attention_mask, 'labels': candidate.labels}])",
+        "    candidate_valid = int((candidate_batch['labels'] != -100).sum().item())",
+        "    if candidate_valid >= MIN_VALID_LABELS:",
+        "        selected_index = idx",
+        "        example = candidate",
+        "        batch = candidate_batch",
+        "        valid_labels = candidate_valid",
+        "        break",
+        "if batch is None:",
+        "    raise SystemExit(f'no sample found with valid_labels >= {MIN_VALID_LABELS} in first {search_limit} records')",
+        "print('selected_index=', selected_index, flush=True)",
         "print('valid_labels=', valid_labels, flush=True)",
         "",
         "model_kwargs = {",
@@ -57,7 +87,8 @@ def build_python_script(
         "    'low_cpu_mem_usage': True,",
         "    'offload_state_dict': True,",
         "    'offload_folder': '/root/nemotron/outputs/offload/train_smoke',",
-        "    'max_memory': {0: os.environ.get('MAX_MEMORY_GPU', '38GiB'), 'cpu': os.environ.get('MAX_MEMORY_CPU', '56GiB')},",
+        "    'max_memory': {0: MAX_MEMORY_GPU, 'cpu': MAX_MEMORY_CPU},",
+        "    'local_files_only': LOCAL_FILES_ONLY,",
         "}",
         "",
         "if LOAD_IN_4BIT:",
@@ -76,6 +107,12 @@ def build_python_script(
         "model = AutoModelForCausalLM.from_pretrained(os.environ['MODEL_NAME'], **model_kwargs)",
         "if LOAD_IN_4BIT:",
         "    model = prepare_model_for_kbit_training(model)",
+        "    if hasattr(model, 'enable_input_require_grads'):",
+        "        model.enable_input_require_grads()",
+        "    else:",
+        "        def _make_inputs_require_grad(module, inputs, output):",
+        "            output.requires_grad_(True)",
+        "        model.get_input_embeddings().register_forward_hook(_make_inputs_require_grad)",
         "model.config.use_cache = False",
         "",
     ]
@@ -132,6 +169,11 @@ def main() -> int:
     parser.add_argument("--load-in-4bit", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--do-backward", action="store_true")
     parser.add_argument("--max-length", type=int, default=256)
+    parser.add_argument("--min-valid-labels", type=int, default=1)
+    parser.add_argument("--sample-search-limit", type=int, default=64)
+    parser.add_argument("--max-memory-gpu", default="38GiB")
+    parser.add_argument("--max-memory-cpu", default="32GiB")
+    parser.add_argument("--local-files-only", action=argparse.BooleanOptionalAction, default=True)
     args = parser.parse_args()
 
     target_modules = [item.strip() for item in args.targets.split(",") if item.strip()]
@@ -142,6 +184,11 @@ def main() -> int:
         load_in_4bit=args.load_in_4bit,
         do_backward=args.do_backward,
         max_length=args.max_length,
+        min_valid_labels=args.min_valid_labels,
+        sample_search_limit=args.sample_search_limit,
+        max_memory_gpu=args.max_memory_gpu,
+        max_memory_cpu=args.max_memory_cpu,
+        local_files_only=args.local_files_only,
     )
     shell_script = "\n".join(
         [

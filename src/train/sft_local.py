@@ -89,6 +89,20 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_SYSTEM_PROMPT,
         help="System prompt used when formatting each training row.",
     )
+    parser.add_argument("--max-memory-gpu", default="39GiB")
+    parser.add_argument("--max-memory-cpu", default="32GiB")
+    parser.add_argument(
+        "--local-files-only",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Load tokenizer/model only from local HF cache.",
+    )
+    parser.add_argument(
+        "--force-full-gpu",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Force the full model onto GPU 0 and disable CPU offload.",
+    )
     return parser.parse_args()
 
 
@@ -99,8 +113,8 @@ def load_split_records(path: str | Path) -> list[dict[str, Any]]:
     return load_jsonl_records(split_path)
 
 
-def build_tokenizer(model_name: str) -> AutoTokenizer:
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+def build_tokenizer(model_name: str, local_files_only: bool = False) -> AutoTokenizer:
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True, local_files_only=local_files_only)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
@@ -189,11 +203,32 @@ def build_dataset(
     return Dataset.from_list(encoded_rows)
 
 
-def build_model(model_name: str, load_in_4bit: bool) -> AutoModelForCausalLM:
+def build_model(
+    model_name: str,
+    load_in_4bit: bool,
+    max_memory_gpu: str,
+    max_memory_cpu: str,
+    local_files_only: bool,
+    force_full_gpu: bool,
+) -> AutoModelForCausalLM:
     model_kwargs: dict[str, Any] = {
         "trust_remote_code": True,
-        "device_map": "auto",
+        "local_files_only": local_files_only,
     }
+
+    if force_full_gpu:
+        model_kwargs["device_map"] = {"": 0}
+        model_kwargs["max_memory"] = {0: max_memory_gpu}
+    else:
+        model_kwargs.update(
+            {
+                "device_map": "auto",
+                "low_cpu_mem_usage": True,
+                "offload_state_dict": True,
+                "offload_folder": "outputs/offload/train_main",
+                "max_memory": {0: max_memory_gpu, "cpu": max_memory_cpu},
+            }
+        )
 
     if load_in_4bit:
         quant_kwargs: dict[str, Any] = dict(
@@ -212,14 +247,21 @@ def build_model(model_name: str, load_in_4bit: bool) -> AutoModelForCausalLM:
 
     model = AutoModelForCausalLM.from_pretrained(model_name, **model_kwargs)
     if load_in_4bit:
-        model = prepare_model_for_kbit_training(model)
+        model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+        if hasattr(model, "enable_input_require_grads"):
+            model.enable_input_require_grads()
+        else:
+            def _make_inputs_require_grad(module, inputs, output):
+                output.requires_grad_(True)
+
+            model.get_input_embeddings().register_forward_hook(_make_inputs_require_grad)
     model.config.use_cache = False
     return model
 
 
 def main() -> None:
     args = parse_args()
-    tokenizer = build_tokenizer(args.model_name)
+    tokenizer = build_tokenizer(args.model_name, local_files_only=args.local_files_only)
 
     train_records = load_split_records(args.train_file)
     val_records = load_split_records(args.val_file)
@@ -250,7 +292,14 @@ def main() -> None:
         else None
     )
 
-    model = build_model(args.model_name, args.load_in_4bit)
+    model = build_model(
+        args.model_name,
+        args.load_in_4bit,
+        max_memory_gpu=args.max_memory_gpu,
+        max_memory_cpu=args.max_memory_cpu,
+        local_files_only=args.local_files_only,
+        force_full_gpu=args.force_full_gpu,
+    )
     model = get_peft_model(
         model,
         build_lora_config(
@@ -260,6 +309,9 @@ def main() -> None:
             dropout=args.lora_dropout,
         ),
     )
+    for name, param in model.named_parameters():
+        if "lora" not in name.lower():
+            param.requires_grad_(False)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

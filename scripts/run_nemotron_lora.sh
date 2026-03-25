@@ -31,6 +31,10 @@ LORA_DROPOUT="${LORA_DROPOUT:-0.05}"
 TRAIN_LIMIT="${TRAIN_LIMIT:-}"
 VAL_LIMIT="${VAL_LIMIT:-}"
 MAX_STEPS="${MAX_STEPS:--1}"
+MAX_MEMORY_GPU="${MAX_MEMORY_GPU:-39GiB}"
+MAX_MEMORY_CPU="${MAX_MEMORY_CPU:-32GiB}"
+LOCAL_FILES_ONLY="${LOCAL_FILES_ONLY:-1}"
+FORCE_FULL_GPU="${FORCE_FULL_GPU:-0}"
 
 mkdir -p "$LOG_DIR" "$OUTPUT_DIR"
 LOG_FILE="$LOG_DIR/${RUN_NAME}_$(date '+%Y%m%d_%H%M%S').log"
@@ -78,7 +82,16 @@ cmd=(
   --lora-rank "$LORA_RANK"
   --lora-alpha "$LORA_ALPHA"
   --lora-dropout "$LORA_DROPOUT"
+  --max-memory-gpu "$MAX_MEMORY_GPU"
+  --max-memory-cpu "$MAX_MEMORY_CPU"
 )
+
+if [[ "$LOCAL_FILES_ONLY" == "1" ]]; then
+  cmd+=(--local-files-only)
+fi
+if [[ "$FORCE_FULL_GPU" == "1" ]]; then
+  cmd+=(--force-full-gpu)
+fi
 
 if [[ -n "$TRAIN_LIMIT" ]]; then
   cmd+=(--train-limit "$TRAIN_LIMIT")
