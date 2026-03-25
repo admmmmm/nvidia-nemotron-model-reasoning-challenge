@@ -491,3 +491,54 @@ At this point, the highest-value next experiment is:
 - verify that the skip-module mitigation produces a valid, non-NaN training loss on a sample with unmasked labels
 - verify that LoRA parameters still require gradients after the skip strategy is applied
 - if those pass, restart the full run with the skip strategy enabled by default
+
+
+## New Confirmed Root Cause: Quantized `lm_head` Kills Gradients
+
+A later single-load diagnostic finally pinpointed where the graph dies.
+
+Observed in one forward pass with dummy `input_ids` and the current 4-bit + skip setup:
+
+- `A.embeddings_out`: `requires_grad=True`
+- `B.layer0_mamba_out`: `requires_grad=True`
+- `C.layer1_moe_out`: `requires_grad=True`
+- `D.layer5_attn_out`: `requires_grad=True`
+- `Zpre.lm_head_in`: `dtype=torch.uint8`, `requires_grad=False`
+- `Z.lm_head_out`: `dtype=torch.uint8`, `requires_grad=False`
+- final `logits.requires_grad=False`
+- final `loss.requires_grad=False`
+
+This proves the graph was not dying inside early Mamba / MoE / Attention blocks.
+It was dying when the backbone output was fed into a **quantized `lm_head`**.
+
+The critical implementation detail is in the Nemotron HF remote-code forward path:
+
+- logits are computed with the equivalent of `self.lm_head(hidden_states.to(self.lm_head.weight.dtype))`
+- when `lm_head` is converted to `Linear4bit`, its weight dtype becomes `uint8`
+- `hidden_states` therefore get cast to `uint8` right before the head
+- that cast destroys autograd for the training loss path
+
+### Confirmed Fix
+
+Add `lm_head` to the Nemotron 4-bit skip list.
+
+Current skip list in `src/train/sft_local.py`:
+
+```python
+NEMOTRON_4BIT_SKIP_MODULES = ["in_proj", "out_proj", "x_proj", "dt_proj", "lm_head"]
+```
+
+After that change, the single-load remote validation produced:
+
+- `lm_head_type=Linear`
+- `Zpre.lm_head_in`: `dtype=torch.float32`, `requires_grad=True`
+- `Z.lm_head_out`: `dtype=torch.float32`, `requires_grad=True`
+- `final logits.requires_grad=True`
+- `final loss.requires_grad=True`
+- `backward ok`
+
+So the current state is:
+
+- original Mamba shape mismatch fixed by skipping Mamba projection layers from 4-bit conversion
+- no-grad backward failure fixed by also skipping `lm_head` from 4-bit conversion
+- training-style forward + backward smoke now succeeds on the remote server

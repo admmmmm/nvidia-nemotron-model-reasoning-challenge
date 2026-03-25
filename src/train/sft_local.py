@@ -23,7 +23,7 @@ from src.train.lora_utils import build_lora_config
 
 
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
-NEMOTRON_4BIT_SKIP_MODULES = ["in_proj", "out_proj", "x_proj", "dt_proj"]
+NEMOTRON_4BIT_SKIP_MODULES = ["in_proj", "out_proj", "x_proj", "dt_proj", "lm_head"]
 
 
 @dataclass
