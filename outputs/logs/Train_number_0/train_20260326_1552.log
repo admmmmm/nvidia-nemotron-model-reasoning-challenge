@@ -1,0 +1,26 @@
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:51, 19.26s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:39<03:37, 19.75s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:59<03:19, 19.97s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:19<02:58, 19.78s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:38<02:37, 19.73s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:59<02:21, 20.22s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:20<02:02, 20.37s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:41<01:42, 20.56s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [03:02<01:22, 20.68s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:23<01:02, 20.71s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:43<00:41, 20.66s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [04:04<00:20, 20.63s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:17<00:00, 18.25s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:17<00:00, 19.78s/it]
+[RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Patched Nemotron MoE dtype handlers: 23
+LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
+  0%|          | 0/565 [00:00<?, ?it/s]  0%|          | 1/565 [01:31<14:18:39, 91.35s/it]

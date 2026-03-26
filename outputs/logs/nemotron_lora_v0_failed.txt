@@ -1,6 +1,6 @@
 run_name=nemotron_lora_v0
 status=FAILED
-timestamp=2026-03-26 15:20:34
-log_file=outputs/logs/nemotron_lora_v0_20260326_1515_clean1/train_20260326_1515.log
+timestamp=2026-03-26 15:52:50
+log_file=outputs/logs/nemotron_lora_v0_20260326_2330_64g_wrap/train_20260326_1530.log
 output_dir=outputs/adapters/nemotron_lora_v0
-run_log_dir=outputs/logs/nemotron_lora_v0_20260326_1515_clean1
+run_log_dir=outputs/logs/nemotron_lora_v0_20260326_2330_64g_wrap

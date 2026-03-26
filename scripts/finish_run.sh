@@ -5,7 +5,6 @@ STATUS="${1:-unknown}"
 RUN_NAME="${2:-run}"
 LOG_FILE="${3:-}"
 OUTPUT_DIR="${4:-}"
-RUN_LOG_DIR="${5:-}"
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
@@ -24,21 +23,7 @@ mkdir -p outputs/logs
   echo "timestamp=$timestamp"
   echo "log_file=$LOG_FILE"
   echo "output_dir=$OUTPUT_DIR"
-  echo "run_log_dir=$RUN_LOG_DIR"
 } > "$marker_file"
-
-if [[ -n "$RUN_LOG_DIR" ]]; then
-  mkdir -p "$RUN_LOG_DIR"
-  run_marker_file="${RUN_LOG_DIR}/status_$(echo "$STATUS" | tr '[:upper:]' '[:lower:]').txt"
-  {
-    echo "run_name=$RUN_NAME"
-    echo "status=$STATUS"
-    echo "timestamp=$timestamp"
-    echo "log_file=$LOG_FILE"
-    echo "output_dir=$OUTPUT_DIR"
-    echo "run_log_dir=$RUN_LOG_DIR"
-  } > "$run_marker_file"
-fi
 
 if [[ "${AUTO_GIT_PUSH:-0}" == "1" ]] && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   branch="${GIT_BRANCH:-main}"

@@ -1,1 +1,1 @@
-outputs/logs/nemotron_lora_v0_20260326_2330_64g_wrap/train_20260326_1530.log
+outputs/logs/Train_number_0/train_20260326_1552.log

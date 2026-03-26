@@ -1,41 +1,1 @@
-Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-=== effective runtime config ===
-RUN_NAME=nemotron_lora_v0
-RUN_FOLDER_NAME=nemotron_lora_v0_20260326_2330_64g_wrap
-MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
-MAX_LENGTH=1024
-BATCH(train/eval)=1/1
-GRAD_ACC=16
-MAX_MEMORY_GPU=39GiB
-MAX_MEMORY_CPU=8GiB
-LOCAL_FILES_ONLY=1
-FORCE_FULL_GPU=1
-RUN_LOG_DIR=outputs/logs/nemotron_lora_v0_20260326_2330_64g_wrap
-LOG_FILE=outputs/logs/nemotron_lora_v0_20260326_2330_64g_wrap/train_20260326_1530.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:52, 19.40s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:37<03:25, 18.71s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:55<03:04, 18.42s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:13<02:44, 18.26s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:31<02:24, 18.12s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:50<02:07, 18.27s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:08<01:49, 18.32s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:28<01:33, 18.68s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:47<01:15, 18.88s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:06<00:57, 19.10s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:26<00:38, 19.13s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:44<00:19, 19.05s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:57<00:00, 16.95s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:57<00:00, 18.24s/it]
-[RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-Patched Nemotron MoE dtype handlers: 23
-LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
-Sample trainable parameter names:
-  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
-  0%|          | 0/565 [00:00<?, ?it/s]  0%|          | 1/565 [02:08<20:07:53, 128.50s/it]  0%|          | 2/565 [03:24<15:18:39, 97.90s/it]   1%|          | 3/565 [04:39<13:35:10, 87.03s/it]  1%|          | 4/565 [05:52<12:44:31, 81.77s/it]  1%|          | 5/565 [07:05<12:13:55, 78.64s/it]  1%|          | 6/565 [08:19<11:57:02, 76.96s/it]  1%|          | 7/565 [09:33<11:46:24, 75.96s/it]  1%|▏         | 8/565 [10:47<11:38:26, 75.24s/it]  2%|▏         | 9/565 [12:01<11:35:43, 75.08s/it]  2%|▏         | 10/565 [13:16<11:33:51, 75.01s/it]                                                     2%|▏         | 10/565 [13:16<11:33:51, 75.01s/it]  2%|▏         | 11/565 [14:31<11:31:06, 74.85s/it]
+conda not found. Please use the Miniconda3 image or install conda first.
