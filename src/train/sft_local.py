@@ -264,6 +264,39 @@ def build_model(
     return model
 
 
+def patch_nemotron_moe_dtype(model: torch.nn.Module) -> int:
+    patched = 0
+    for module in model.modules():
+        moe_fn = getattr(module, "moe", None)
+        if not callable(moe_fn):
+            continue
+        if getattr(module, "_nemotron_moe_dtype_patch", False):
+            continue
+
+        original_moe = moe_fn
+
+        def _wrapped_moe(hidden_states, topk_indices, topk_weights, *args, __orig=original_moe, **kwargs):
+            if (
+                isinstance(hidden_states, torch.Tensor)
+                and isinstance(topk_weights, torch.Tensor)
+                and topk_weights.dtype != hidden_states.dtype
+            ):
+                topk_weights = topk_weights.to(hidden_states.dtype)
+            out = __orig(hidden_states, topk_indices, topk_weights, *args, **kwargs)
+            if (
+                isinstance(hidden_states, torch.Tensor)
+                and isinstance(out, torch.Tensor)
+                and out.dtype != hidden_states.dtype
+            ):
+                out = out.to(hidden_states.dtype)
+            return out
+
+        setattr(module, "moe", _wrapped_moe)
+        setattr(module, "_nemotron_moe_dtype_patch", True)
+        patched += 1
+    return patched
+
+
 def main() -> None:
     args = parse_args()
     tokenizer = build_tokenizer(args.model_name, local_files_only=args.local_files_only)
@@ -305,6 +338,12 @@ def main() -> None:
         local_files_only=args.local_files_only,
         force_full_gpu=args.force_full_gpu,
     )
+    peft_kwargs: dict[str, Any] = {}
+    peft_sig = inspect.signature(get_peft_model)
+    if "autocast_adapter_dtype" in peft_sig.parameters:
+        # Keep adapter path in BF16 on Nemotron to avoid MoE BF16/Float mismatch.
+        peft_kwargs["autocast_adapter_dtype"] = False
+
     model = get_peft_model(
         model,
         build_lora_config(
@@ -313,7 +352,34 @@ def main() -> None:
             alpha=args.lora_alpha,
             dropout=args.lora_dropout,
         ),
+        **peft_kwargs,
     )
+    if "nemotron" in args.model_name.lower():
+        patched_count = patch_nemotron_moe_dtype(model)
+        print(f"Patched Nemotron MoE dtype handlers: {patched_count}")
+    trainable_params = 0
+    all_params = 0
+    trainable_names: list[str] = []
+    for name, param in model.named_parameters():
+        n = param.numel()
+        all_params += n
+        if param.requires_grad:
+            trainable_params += n
+            if len(trainable_names) < 20:
+                trainable_names.append(name)
+    print(
+        f"LoRA trainable params: {trainable_params:,} / {all_params:,} "
+        f"({(100.0 * trainable_params / max(all_params, 1)):.6f}%)"
+    )
+    if trainable_names:
+        print("Sample trainable parameter names:")
+        for item in trainable_names:
+            print(f"  - {item}")
+    if trainable_params == 0:
+        raise RuntimeError(
+            "No trainable parameters found after LoRA injection. "
+            "Please verify target_modules for this model architecture."
+        )
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
