@@ -18,7 +18,8 @@ TRAIN_FILE="${TRAIN_FILE:-train.csv}"
 SPLIT_DIR="${SPLIT_DIR:-data/splits/default}"
 OUTPUT_DIR="${OUTPUT_DIR:-outputs/adapters/$RUN_NAME}"
 LOG_DIR="${LOG_DIR:-outputs/logs}"
-MAX_LENGTH="${MAX_LENGTH:-2048}"
+RUN_FOLDER_NAME="${RUN_FOLDER_NAME:-}"
+MAX_LENGTH="${MAX_LENGTH:-1024}"
 NUM_EPOCHS="${NUM_EPOCHS:-1}"
 LEARNING_RATE="${LEARNING_RATE:-1e-4}"
 PER_DEVICE_TRAIN_BATCH_SIZE="${PER_DEVICE_TRAIN_BATCH_SIZE:-1}"
@@ -34,12 +35,25 @@ TRAIN_LIMIT="${TRAIN_LIMIT:-}"
 VAL_LIMIT="${VAL_LIMIT:-}"
 MAX_STEPS="${MAX_STEPS:--1}"
 MAX_MEMORY_GPU="${MAX_MEMORY_GPU:-39GiB}"
-MAX_MEMORY_CPU="${MAX_MEMORY_CPU:-32GiB}"
+MAX_MEMORY_CPU="${MAX_MEMORY_CPU:-8GiB}"
 LOCAL_FILES_ONLY="${LOCAL_FILES_ONLY:-1}"
-FORCE_FULL_GPU="${FORCE_FULL_GPU:-0}"
+FORCE_FULL_GPU="${FORCE_FULL_GPU:-1}"
 
-mkdir -p "$LOG_DIR" "$OUTPUT_DIR"
-LOG_FILE="$LOG_DIR/${RUN_NAME}_$(date '+%Y%m%d_%H%M%S').log"
+RUN_TS_MINUTE="$(date '+%Y%m%d_%H%M')"
+if [[ -z "$RUN_FOLDER_NAME" ]]; then
+  RUN_FOLDER_NAME="${RUN_NAME}_${RUN_TS_MINUTE}"
+fi
+RUN_LOG_DIR="${LOG_DIR}/${RUN_FOLDER_NAME}"
+LOG_FILE="${RUN_LOG_DIR}/train_${RUN_TS_MINUTE}.log"
+
+mkdir -p "$LOG_DIR" "$RUN_LOG_DIR" "$OUTPUT_DIR"
+echo "$RUN_LOG_DIR" > "${LOG_DIR}/${RUN_NAME}_latest_log_dir.txt"
+echo "$LOG_FILE" > "${LOG_DIR}/${RUN_NAME}_latest_log_path.txt"
+
+if [[ "$MODEL_NAME" == *"Nemotron"* ]] || [[ "$MODEL_NAME" == *"nemotron"* ]]; then
+  # Nemotron on this host repeatedly OOM-killed under CPU offload path.
+  FORCE_FULL_GPU=1
+fi
 
 if ! command -v conda >/dev/null 2>&1; then
   echo "conda not found. Please use the Miniconda3 image or install conda first." >&2
@@ -102,16 +116,30 @@ if [[ -n "$VAL_LIMIT" ]]; then
   cmd+=(--val-limit "$VAL_LIMIT")
 fi
 
+echo "=== effective runtime config ==="
+echo "RUN_NAME=$RUN_NAME"
+echo "RUN_FOLDER_NAME=$RUN_FOLDER_NAME"
+echo "MODEL_NAME=$MODEL_NAME"
+echo "MAX_LENGTH=$MAX_LENGTH"
+echo "BATCH(train/eval)=$PER_DEVICE_TRAIN_BATCH_SIZE/$PER_DEVICE_EVAL_BATCH_SIZE"
+echo "GRAD_ACC=$GRADIENT_ACCUMULATION_STEPS"
+echo "MAX_MEMORY_GPU=$MAX_MEMORY_GPU"
+echo "MAX_MEMORY_CPU=$MAX_MEMORY_CPU"
+echo "LOCAL_FILES_ONLY=$LOCAL_FILES_ONLY"
+echo "FORCE_FULL_GPU=$FORCE_FULL_GPU"
+echo "RUN_LOG_DIR=$RUN_LOG_DIR"
+echo "LOG_FILE=$LOG_FILE"
+
 set +e
 "${cmd[@]}" 2>&1 | tee "$LOG_FILE"
 train_exit=${PIPESTATUS[0]}
 set -e
 
 if [[ "$train_exit" -eq 0 ]]; then
-  bash scripts/finish_run.sh SUCCESS "$RUN_NAME" "$LOG_FILE" "$OUTPUT_DIR"
+  bash scripts/finish_run.sh SUCCESS "$RUN_NAME" "$LOG_FILE" "$OUTPUT_DIR" "$RUN_LOG_DIR"
   echo "Training finished successfully. Log: $LOG_FILE"
 else
-  bash scripts/finish_run.sh FAILED "$RUN_NAME" "$LOG_FILE" "$OUTPUT_DIR"
+  bash scripts/finish_run.sh FAILED "$RUN_NAME" "$LOG_FILE" "$OUTPUT_DIR" "$RUN_LOG_DIR"
   echo "Training failed. Log: $LOG_FILE" >&2
   exit "$train_exit"
 fi

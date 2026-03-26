@@ -26,15 +26,24 @@ def main() -> int:
         fi
         echo "=== LOG FILES ==="
         cd /root/nemotron
-        ls -1t outputs/logs/nemotron_lora_v0_*.log | head -n 6
-        latest_launcher="$(ls -1t outputs/logs/nemotron_lora_v0_launcher_*.log | head -n 1)"
-        latest_train="$(ls -1t outputs/logs/nemotron_lora_v0_*.log | grep -v launcher | head -n 1)"
+        ls -1t outputs/logs/nemotron_lora_v0_*.log 2>/dev/null | head -n 6 || true
+        latest_launcher="$(ls -1t outputs/logs/nemotron_lora_v0_launcher_*.log 2>/dev/null | head -n 1)"
+        latest_train=""
+        if [[ -f outputs/logs/nemotron_lora_v0_latest_log_path.txt ]]; then
+          latest_train="$(cat outputs/logs/nemotron_lora_v0_latest_log_path.txt 2>/dev/null || true)"
+        fi
+        if [[ -z "$latest_train" ]]; then
+          latest_train="$(find outputs/logs -type f -name 'train_*.log' -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -n 1 | awk '{{print $2}}')"
+        fi
+        if [[ -z "$latest_train" ]]; then
+          latest_train="$(ls -1t outputs/logs/nemotron_lora_v0_*.log 2>/dev/null | grep -v launcher | head -n 1)"
+        fi
         echo "=== LATEST LAUNCHER ==="
         echo "$latest_launcher"
-        tail -n 80 "$latest_launcher" || true
+        if [[ -n "$latest_launcher" ]]; then tail -n 80 "$latest_launcher" || true; fi
         echo "=== LATEST TRAIN ==="
         echo "$latest_train"
-        tail -n 80 "$latest_train" || true
+        if [[ -n "$latest_train" ]]; then tail -n 80 "$latest_train" || true; fi
         echo "=== STATUS ==="
         cat outputs/logs/nemotron_lora_v0_status.json 2>/dev/null || true
         echo "=== GPU ==="

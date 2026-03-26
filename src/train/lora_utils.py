@@ -8,9 +8,6 @@ NEMOTRON_TARGET_MODULES = [
     "k_proj",
     "v_proj",
     "o_proj",
-    "down_proj",
-    "up_proj",
-    "gate_proj",
 ]
 
 
