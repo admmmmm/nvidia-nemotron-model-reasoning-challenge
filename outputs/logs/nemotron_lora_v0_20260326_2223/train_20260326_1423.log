@@ -1,0 +1,95 @@
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:18<03:41, 18.45s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:37<03:27, 18.85s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:56<03:10, 19.03s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:15<02:51, 19.04s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:35<02:35, 19.41s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:57<02:20, 20.02s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:17<02:00, 20.14s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:37<01:39, 19.93s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:56<01:19, 19.80s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:15<00:58, 19.59s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:33<00:37, 18.94s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:50<00:18, 18.33s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:01<00:00, 16.16s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:01<00:00, 18.55s/it]
+[RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+LoRA trainable params: 434,659,328 / 17,025,512,896 (2.552988%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.1.mixer.experts.0.up_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.0.up_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.0.down_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.0.down_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.1.up_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.1.up_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.1.down_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.1.down_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.2.up_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.2.up_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.2.down_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.2.down_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.3.up_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.3.up_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.3.down_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.3.down_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.4.up_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.4.up_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.4.down_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.1.mixer.experts.4.down_proj.lora_B.default.weight
+  0%|          | 0/565 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/nemotron/src/train/sft_local.py", line 392, in <module>
+    main()
+  File "/root/nemotron/src/train/sft_local.py", line 381, in main
+    trainer.train()
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 4020, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/transformers/trainer.py", line 4110, in compute_loss
+    outputs = model(**inputs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/accelerate/utils/operations.py", line 823, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/accelerate/utils/operations.py", line 811, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/peft/peft_model.py", line 1644, in forward
+    return self.base_model(
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 1702, in forward
+    nemotron_h_outputs = self.backbone(
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 1489, in forward
+    hidden_states = self._gradient_checkpointing_func(
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 328, in _fn
+    return fn(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 17, in inner
+    return fn(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 451, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/autograd/function.py", line 539, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 230, in forward
+    outputs = run_function(*args)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 786, in forward
+    hidden_states = self.mixer(
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 869, in forward
+    hidden_states = self.moe(hidden_states, topk_indices, topk_weights).view(*orig_shape)
+  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA_hyphen_Nemotron_hyphen_3_hyphen_Nano_hyphen_30B_hyphen_A3B_hyphen_BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 852, in moe
+    final_hidden_states.index_add_(0, token_indices, weighted_output)
+RuntimeError: index_add_(): self (BFloat16) and source (Float) must have the same scalar type
+  0%|          | 0/565 [00:26<?, ?it/s]
