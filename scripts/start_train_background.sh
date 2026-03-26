@@ -4,6 +4,22 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
+if ! command -v conda >/dev/null 2>&1; then
+  for conda_root in \
+    "/home/vipuser/anaconda3" \
+    "$HOME/anaconda3" \
+    "/opt/conda" \
+    "/usr/local/miniconda3"
+  do
+    if [[ -f "$conda_root/etc/profile.d/conda.sh" ]]; then
+      # shellcheck disable=SC1090
+      source "$conda_root/etc/profile.d/conda.sh"
+      export PATH="$conda_root/bin:$PATH"
+      break
+    fi
+  done
+fi
+
 if [[ -f .env.server ]]; then
   set -a
   # shellcheck disable=SC1091
