@@ -21,10 +21,14 @@ if ! command -v conda >/dev/null 2>&1; then
 fi
 
 if [[ -f .env.server ]]; then
+  ORIG_RUN_NAME="${RUN_NAME-}"
+  ORIG_RUN_FOLDER_NAME="${RUN_FOLDER_NAME-}"
   set -a
   # shellcheck disable=SC1091
   source .env.server
   set +a
+  [[ -n "${ORIG_RUN_NAME:-}" ]] && RUN_NAME="$ORIG_RUN_NAME"
+  [[ -n "${ORIG_RUN_FOLDER_NAME:-}" ]] && RUN_FOLDER_NAME="$ORIG_RUN_FOLDER_NAME"
 fi
 
 RUN_NAME="${RUN_NAME:-nemotron_lora_v0}"

@@ -1,16 +1,0 @@
-Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-=== effective runtime config ===
-RUN_NAME=nemotron_lora_v0
-RUN_FOLDER_NAME=Train_number_0
-MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
-MAX_LENGTH=1024
-BATCH(train/eval)=1/1
-GRAD_ACC=16
-MAX_MEMORY_GPU=39GiB
-MAX_MEMORY_CPU=8GiB
-LOCAL_FILES_ONLY=1
-FORCE_FULL_GPU=1
-RUN_LOG_DIR=outputs/logs/Train_number_0
-LOG_FILE=outputs/logs/Train_number_0/train_20260326_1602.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:51, 19.26s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:39<03:35, 19.59s/it]
