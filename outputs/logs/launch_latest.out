@@ -13,4 +13,29 @@ LOCAL_FILES_ONLY=1
 FORCE_FULL_GPU=1
 RUN_LOG_DIR=outputs/logs/Train_number_0
 LOG_FILE=outputs/logs/Train_number_0/train_20260326_1633.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:52, 19.34s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:39<03:35, 19.58s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:46<02:21, 14.15s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:07<02:29, 16.64s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:27<02:23, 18.00s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:48<02:13, 19.06s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:09<01:57, 19.58s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:30<01:40, 20.01s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:51<01:21, 20.25s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:12<01:01, 20.52s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:33<00:41, 20.64s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:53<00:20, 20.56s/it]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:19<03:52, 19.34s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:39<03:35, 19.58s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:46<02:21, 14.15s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:07<02:29, 16.64s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:27<02:23, 18.00s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:48<02:13, 19.06s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [02:09<01:57, 19.58s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:30<01:40, 20.01s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:51<01:21, 20.25s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [03:12<01:01, 20.52s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [03:33<00:41, 20.64s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:53<00:20, 20.56s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:05<00:00, 18.06s/it]Loading checkpoint shards: 100%|██████████| 13/13 [04:05<00:00, 18.91s/it]
+[RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Patched Nemotron MoE dtype handlers: 23
+LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
+  0%|          | 0/565 [00:00<?, ?it/s]
