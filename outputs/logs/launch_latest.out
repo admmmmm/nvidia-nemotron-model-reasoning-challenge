@@ -13,4 +13,4 @@ LOCAL_FILES_ONLY=1
 FORCE_FULL_GPU=1
 RUN_LOG_DIR=outputs/logs/nemotron_lora_v0_20260326_1515_clean1
 LOG_FILE=outputs/logs/nemotron_lora_v0_20260326_1515_clean1/train_20260326_1515.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:18<03:42, 18.51s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:37<03:25, 18.66s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:56<03:10, 19.04s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:16<02:54, 19.39s/it]
