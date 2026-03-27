@@ -7,6 +7,7 @@ import stat
 import subprocess
 import sys
 import time
+import traceback
 from pathlib import Path
 
 import paramiko
@@ -43,6 +44,35 @@ def download_dir(sftp: paramiko.SFTPClient, remote_dir: str, local_dir: Path) ->
         else:
             download_file(sftp, remote_child, local_child)
     return True
+
+
+def push_with_retries(repo_root: Path, retries: int, retry_delay_seconds: int) -> int:
+    last_result: subprocess.CompletedProcess[str] | None = None
+    for attempt in range(1, retries + 1):
+        result = subprocess.run(
+            ["git", "push", "origin", "master"],
+            cwd=repo_root,
+            text=True,
+            capture_output=True,
+        )
+        if result.stdout.strip():
+            print(result.stdout.strip())
+        if result.returncode == 0:
+            return 0
+
+        last_result = result
+        message = (result.stderr or result.stdout or "git push failed").strip()
+        print(
+            f"warning: git push failed (attempt {attempt}/{retries}): {message}",
+            file=sys.stderr,
+            flush=True,
+        )
+        if attempt < retries:
+            time.sleep(retry_delay_seconds)
+
+    if last_result and last_result.stderr.strip():
+        print(last_result.stderr.strip(), file=sys.stderr)
+    return last_result.returncode if last_result else 1
 
 
 def sync_once(args: argparse.Namespace) -> int:
@@ -103,23 +133,27 @@ def sync_once(args: argparse.Namespace) -> int:
         text=True,
         check=True,
     )
-    if not git_status.stdout.strip():
+    if git_status.stdout.strip():
+        subprocess.run(["git", "add", "outputs/logs"], cwd=repo_root, check=True)
+        commit = subprocess.run(
+            ["git", "commit", "-m", f"chore: sync {args.run_name} status"],
+            cwd=repo_root,
+            text=True,
+            capture_output=True,
+        )
+        if commit.returncode != 0 and "nothing to commit" not in (commit.stdout + commit.stderr):
+            print(commit.stdout)
+            print(commit.stderr, file=sys.stderr)
+            return commit.returncode
+    else:
         print("no local log changes to commit")
-        return 0
 
-    subprocess.run(["git", "add", "outputs/logs"], cwd=repo_root, check=True)
-    commit = subprocess.run(
-        ["git", "commit", "-m", f"chore: sync {args.run_name} status"],
-        cwd=repo_root,
-        text=True,
-        capture_output=True,
-    )
-    if commit.returncode != 0 and "nothing to commit" not in (commit.stdout + commit.stderr):
-        print(commit.stdout)
-        print(commit.stderr, file=sys.stderr)
-        return commit.returncode
     if args.push:
-        subprocess.run(["git", "push", "origin", "master"], cwd=repo_root, check=True)
+        return push_with_retries(
+            repo_root=repo_root,
+            retries=args.push_retries,
+            retry_delay_seconds=args.retry_delay_seconds,
+        )
     return 0
 
 
@@ -134,12 +168,27 @@ def main() -> int:
     parser.add_argument("--push", action="store_true")
     parser.add_argument("--loop", action="store_true")
     parser.add_argument("--interval-seconds", type=int, default=60)
+    parser.add_argument("--push-retries", type=int, default=5)
+    parser.add_argument("--retry-delay-seconds", type=int, default=20)
     args = parser.parse_args()
 
     while True:
-        code = sync_once(args)
-        if code != 0 or not args.loop:
+        try:
+            code = sync_once(args)
+        except Exception:
+            traceback.print_exc()
+            code = 1
+
+        if not args.loop:
             return code
+        if code != 0:
+            print(
+                f"sync failed with code {code}; retrying in {args.retry_delay_seconds}s",
+                file=sys.stderr,
+                flush=True,
+            )
+            time.sleep(args.retry_delay_seconds)
+            continue
         print(f"sleeping {args.interval_seconds}s before next sync", flush=True)
         time.sleep(args.interval_seconds)
 
