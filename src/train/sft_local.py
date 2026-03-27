@@ -79,6 +79,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--logging-steps", type=int, default=10)
     parser.add_argument("--save-steps", type=int, default=200)
     parser.add_argument("--eval-steps", type=int, default=200)
+    parser.add_argument("--max-grad-norm", type=float, default=1.0)
+    parser.add_argument("--evaluation-strategy", default="steps")
+    parser.add_argument("--save-strategy", default="steps")
+    parser.add_argument(
+        "--disable-eval",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Disable validation during training even if a validation split exists.",
+    )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--lora-rank", type=int, default=16)
     parser.add_argument("--lora-alpha", type=int, default=32)
@@ -319,16 +328,14 @@ def main() -> None:
         max_length=args.max_length,
         system_prompt=args.system_prompt,
     )
-    eval_dataset = (
-        build_dataset(
+    eval_dataset = None
+    if val_records and not args.disable_eval:
+        eval_dataset = build_dataset(
             val_records,
             tokenizer=tokenizer,
             max_length=args.max_length,
             system_prompt=args.system_prompt,
         )
-        if val_records
-        else None
-    )
 
     model = build_model(
         args.model_name,
@@ -396,16 +403,19 @@ def main() -> None:
         logging_steps=args.logging_steps,
         save_steps=args.save_steps,
         eval_steps=args.eval_steps,
+        max_grad_norm=args.max_grad_norm,
         save_total_limit=2,
         bf16=use_nemotron_safe_precision,
         fp16=not use_nemotron_safe_precision,
-        save_strategy="steps",
+        save_strategy=args.save_strategy,
         report_to="none",
         remove_unused_columns=False,
         gradient_checkpointing=True,
         seed=args.seed,
     )
-    evaluation_value = "steps" if eval_dataset is not None else "no"
+    evaluation_value = args.evaluation_strategy
+    if args.disable_eval or eval_dataset is None:
+        evaluation_value = "no"
     training_signature = inspect.signature(TrainingArguments.__init__)
     if "evaluation_strategy" in training_signature.parameters:
         training_kwargs["evaluation_strategy"] = evaluation_value
