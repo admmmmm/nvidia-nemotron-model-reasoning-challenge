@@ -34,6 +34,25 @@ copy_dir_if_exists() {
   fi
 }
 
+cd "$GIT_REPO"
+
+branch="$(git branch --show-current 2>/dev/null || true)"
+if [[ -z "$branch" ]]; then
+  branch="master"
+fi
+
+echo "[$(date '+%F %T')] sync_run_to_git: fetch origin/$branch"
+git fetch origin "$branch" || true
+
+if git rev-parse --verify "origin/$branch" >/dev/null 2>&1; then
+  echo "[$(date '+%F %T')] sync_run_to_git: rebasing onto origin/$branch"
+  if ! git rebase "origin/$branch"; then
+    echo "[$(date '+%F %T')] sync_run_to_git: rebase failed, aborting rebase and skipping this cycle" >&2
+    git rebase --abort >/dev/null 2>&1 || true
+    exit 0
+  fi
+fi
+
 cd "$SOURCE_REPO"
 
 mkdir -p "$GIT_REPO/outputs/logs"
@@ -85,23 +104,6 @@ if [[ -n "$LATEST_LOG_PATH" ]]; then
 fi
 
 cd "$GIT_REPO"
-
-branch="$(git branch --show-current 2>/dev/null || true)"
-if [[ -z "$branch" ]]; then
-  branch="master"
-fi
-
-echo "[$(date '+%F %T')] sync_run_to_git: fetch origin/$branch"
-git fetch origin "$branch" || true
-
-if git rev-parse --verify "origin/$branch" >/dev/null 2>&1; then
-  echo "[$(date '+%F %T')] sync_run_to_git: rebasing onto origin/$branch"
-  if ! git pull --rebase origin "$branch"; then
-    echo "[$(date '+%F %T')] sync_run_to_git: rebase failed, aborting rebase and skipping this cycle" >&2
-    git rebase --abort >/dev/null 2>&1 || true
-    exit 0
-  fi
-fi
 
 git add outputs/logs || true
 if ! git diff --cached --quiet; then
