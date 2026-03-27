@@ -1,22 +1,3 @@
-Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-=== effective runtime config ===
-RUN_NAME=Train_number_1
-RUN_FOLDER_NAME=Train_number_1
-MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
-MAX_LENGTH=1024
-BATCH(train/eval)=1/1
-GRAD_ACC=16
-MAX_MEMORY_GPU=39GiB
-MAX_MEMORY_CPU=48GiB
-MAX_GRAD_NORM=1.0
-EVALUATION_STRATEGY=no
-SAVE_STRATEGY=epoch
-DISABLE_EVAL=1
-LOCAL_FILES_ONLY=1
-FORCE_FULL_GPU=1
-RUN_LOG_DIR=outputs/logs/Train_number_1
-LOG_FILE=outputs/logs/Train_number_1/train_20260327_0059.log
 Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [01:19<15:57, 79.82s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [02:42<14:56, 81.48s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [03:52<12:43, 76.40s/it]Loading checkpoint shards:  31%|███       | 4/13 [05:18<12:00, 80.09s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [06:41<10:49, 81.24s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [08:02<09:27, 81.12s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [09:19<07:57, 79.65s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [10:37<06:36, 79.30s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [11:57<05:17, 79.31s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [13:16<03:58, 79.41s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [14:33<02:37, 78.57s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [15:50<01:18, 78.06s/it]Loading checkpoint shards: 100%|██████████| 13/13 [16:39<00:00, 69.15s/it]Loading checkpoint shards: 100%|██████████| 13/13 [16:39<00:00, 76.85s/it]
 [RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
 Patched Nemotron MoE dtype handlers: 23
