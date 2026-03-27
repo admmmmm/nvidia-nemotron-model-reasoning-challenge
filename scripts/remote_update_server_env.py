@@ -44,6 +44,8 @@ updates = {
     "OUTPUT_DIR": "outputs/adapters/${RUN_NAME}",
     "MAX_LENGTH": "1024",
     "LEARNING_RATE": "1e-5",
+    "PER_DEVICE_TRAIN_BATCH_SIZE": "2",
+    "GRADIENT_ACCUMULATION_STEPS": "8",
     "EVAL_STEPS": "500",
     "MAX_GRAD_NORM": "1.0",
     "EVALUATION_STRATEGY": "no",
@@ -51,6 +53,7 @@ updates = {
     "DISABLE_EVAL": "1",
     "MAX_MEMORY_GPU": "39GiB",
     "MAX_MEMORY_CPU": "48GiB",
+    "FORCE_FULL_GPU": "1",
 }
 
 for key, value in updates.items():
@@ -59,7 +62,7 @@ for key, value in updates.items():
 path.write_text(text, encoding="utf-8")
 PY
         echo "=== updated .env.server ==="
-        grep -nE '^(OUTPUT_DIR|MAX_LENGTH|LEARNING_RATE|EVAL_STEPS|MAX_GRAD_NORM|EVALUATION_STRATEGY|SAVE_STRATEGY|DISABLE_EVAL|MAX_MEMORY_GPU|MAX_MEMORY_CPU)=' .env.server || true
+        grep -nE '^(OUTPUT_DIR|MAX_LENGTH|LEARNING_RATE|PER_DEVICE_TRAIN_BATCH_SIZE|GRADIENT_ACCUMULATION_STEPS|EVAL_STEPS|MAX_GRAD_NORM|EVALUATION_STRATEGY|SAVE_STRATEGY|DISABLE_EVAL|MAX_MEMORY_GPU|MAX_MEMORY_CPU|FORCE_FULL_GPU)=' .env.server || true
         """
     ).strip()
 
