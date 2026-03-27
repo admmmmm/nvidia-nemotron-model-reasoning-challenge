@@ -84,22 +84,6 @@ if [[ -n "$LATEST_LOG_PATH" ]]; then
     "$GIT_REPO/outputs/logs/$latest_log_name"
 fi
 
-copy_if_exists \
-  "$SOURCE_REPO/PROJECT_PLAN.md" \
-  "$GIT_REPO/PROJECT_PLAN.md"
-copy_if_exists \
-  "$SOURCE_REPO/README.md" \
-  "$GIT_REPO/README.md"
-copy_if_exists \
-  "$SOURCE_REPO/NEMOTRON_4BIT_MAMBA_SHAPE_MISMATCH_DEBUG.md" \
-  "$GIT_REPO/NEMOTRON_4BIT_MAMBA_SHAPE_MISMATCH_DEBUG.md"
-copy_dir_if_exists \
-  "$SOURCE_REPO/scripts" \
-  "$GIT_REPO/scripts"
-copy_dir_if_exists \
-  "$SOURCE_REPO/src" \
-  "$GIT_REPO/src"
-
 cd "$GIT_REPO"
 
 branch="$(git branch --show-current 2>/dev/null || true)"
@@ -107,8 +91,27 @@ if [[ -z "$branch" ]]; then
   branch="master"
 fi
 
-git add outputs/logs PROJECT_PLAN.md README.md NEMOTRON_4BIT_MAMBA_SHAPE_MISMATCH_DEBUG.md scripts src .env.server.example || true
+echo "[$(date '+%F %T')] sync_run_to_git: fetch origin/$branch"
+git fetch origin "$branch" || true
+
+if git rev-parse --verify "origin/$branch" >/dev/null 2>&1; then
+  echo "[$(date '+%F %T')] sync_run_to_git: rebasing onto origin/$branch"
+  if ! git pull --rebase origin "$branch"; then
+    echo "[$(date '+%F %T')] sync_run_to_git: rebase failed, aborting rebase and skipping this cycle" >&2
+    git rebase --abort >/dev/null 2>&1 || true
+    exit 0
+  fi
+fi
+
+git add outputs/logs || true
 if ! git diff --cached --quiet; then
-  git commit -m "chore: sync ${RUN_NAME} status" >/dev/null 2>&1 || true
-  git push origin "$branch" >/dev/null 2>&1 || true
+  echo "[$(date '+%F %T')] sync_run_to_git: committing status snapshot"
+  git commit -m "chore: sync ${RUN_NAME} status" || true
+  echo "[$(date '+%F %T')] sync_run_to_git: pushing to origin/$branch"
+  if ! git push origin "$branch"; then
+    echo "[$(date '+%F %T')] sync_run_to_git: push failed" >&2
+    exit 0
+  fi
+else
+  echo "[$(date '+%F %T')] sync_run_to_git: no log changes to sync"
 fi
