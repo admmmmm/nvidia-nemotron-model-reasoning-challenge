@@ -1,12 +1,12 @@
 Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
 huggingface login ok
 === effective runtime config ===
-RUN_NAME=Train_number_1
-RUN_FOLDER_NAME=Train_number_1
+RUN_NAME=Train_number_2
+RUN_FOLDER_NAME=Train_number_2
 MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
 MAX_LENGTH=1024
-BATCH(train/eval)=1/1
-GRAD_ACC=16
+BATCH(train/eval)=2/1
+GRAD_ACC=8
 MAX_MEMORY_GPU=39GiB
 MAX_MEMORY_CPU=48GiB
 MAX_GRAD_NORM=1.0
@@ -15,31 +15,6 @@ SAVE_STRATEGY=epoch
 DISABLE_EVAL=1
 LOCAL_FILES_ONLY=1
 FORCE_FULL_GPU=1
-RUN_LOG_DIR=outputs/logs/Train_number_1
-LOG_FILE=outputs/logs/Train_number_1/train_20260327_0059.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [01:19<15:57, 79.82s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [02:42<14:56, 81.48s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [03:52<12:43, 76.40s/it]Loading checkpoint shards:  31%|███       | 4/13 [05:18<12:00, 80.09s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [06:41<10:49, 81.24s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [08:02<09:27, 81.12s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [09:19<07:57, 79.65s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [10:37<06:36, 79.30s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [11:57<05:17, 79.31s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [13:16<03:58, 79.41s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [14:33<02:37, 78.57s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [15:50<01:18, 78.06s/it]Loading checkpoint shards: 100%|██████████| 13/13 [16:39<00:00, 69.15s/it]Loading checkpoint shards: 100%|██████████| 13/13 [16:39<00:00, 76.85s/it]
-[RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-Patched Nemotron MoE dtype handlers: 23
-LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
-Sample trainable parameter names:
-  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
-  0%|          | 0/565 [00:00<?, ?it/s]  0%|          | 1/565 [07:08<67:03:44, 428.06s/it]  0%|          | 2/565 [14:04<65:55:00, 421.49s/it]  1%|          | 3/565 [20:48<64:31:37, 413.34s/it]  1%|          | 4/565 [27:27<63:32:25, 407.75s/it]  1%|          | 5/565 [34:06<62:56:05, 404.58s/it]  1%|          | 6/565 [40:46<62:33:00, 402.83s/it]  1%|          | 7/565 [47:38<62:54:31, 405.86s/it]  1%|▏         | 8/565 [54:18<62:30:17, 403.98s/it]  2%|▏         | 9/565 [1:00:51<61:53:59, 400.79s/it]  2%|▏         | 10/565 [1:07:23<61:21:53, 398.04s/it]                                                        2%|▏         | 10/565 [1:07:23<61:21:53, 398.04s/it]  2%|▏         | 11/565 [1:13:29<59:42:19, 387.98s/it]  2%|▏         | 12/565 [1:19:55<59:32:25, 387.60s/it]  2%|▏         | 13/565 [1:26:21<59:22:00, 387.17s/it]  2%|▏         | 14/565 [1:32:21<57:57:37, 378.69s/it]  3%|▎         | 15/565 [1:37:32<54:44:53, 358.35s/it]  3%|▎         | 16/565 [1:41:24<48:52:40, 320.51s/it]
+RUN_LOG_DIR=outputs/logs/Train_number_2
+LOG_FILE=outputs/logs/Train_number_2/train_20260327_0403.log
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:25<05:01, 25.12s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:50<04:37, 25.27s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:13<04:03, 24.39s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:39<03:43, 24.84s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [02:04<03:19, 24.95s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [02:30<02:56, 25.27s/it]

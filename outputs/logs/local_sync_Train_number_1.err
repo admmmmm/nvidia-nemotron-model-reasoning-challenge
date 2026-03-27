@@ -49,3 +49,19 @@ To https://github.com/admmmmm/nvidia-nemotron-model-reasoning-challenge.git
    9e35c63..f0bc4f7  master -> master
 To https://github.com/admmmmm/nvidia-nemotron-model-reasoning-challenge.git
    f0bc4f7..ffd3493  master -> master
+To https://github.com/admmmmm/nvidia-nemotron-model-reasoning-challenge.git
+   ffd3493..c18ee08  master -> master
+fatal: unable to access 'https://github.com/admmmmm/nvidia-nemotron-model-reasoning-challenge.git/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 148, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 140, in main
+    code = sync_once(args)
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 122, in sync_once
+    subprocess.run(["git", "push", "origin", "master"], cwd=repo_root, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adm14\Miniconda3\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', 'push', 'origin', 'master']' returned non-zero exit status 128.
