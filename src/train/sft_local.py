@@ -19,7 +19,12 @@ from transformers import (
     TrainingArguments,
 )
 
-from src.data.format_sft import DEFAULT_SYSTEM_PROMPT, build_assistant_target, load_jsonl_records
+from src.data.format_sft import (
+    DEFAULT_ASSISTANT_TARGET_STYLE,
+    DEFAULT_SYSTEM_PROMPT,
+    build_assistant_target,
+    load_jsonl_records,
+)
 from src.train.lora_utils import build_lora_config
 
 
@@ -103,6 +108,12 @@ def parse_args() -> argparse.Namespace:
         default=DEFAULT_SYSTEM_PROMPT,
         help="System prompt used when formatting each training row.",
     )
+    parser.add_argument(
+        "--assistant-target-style",
+        default=DEFAULT_ASSISTANT_TARGET_STYLE,
+        choices=["raw", "boxed_only", "boxed_final_line"],
+        help="How to format the assistant target during SFT.",
+    )
     parser.add_argument("--max-memory-gpu", default="39GiB")
     parser.add_argument("--max-memory-cpu", default="32GiB")
     parser.add_argument(
@@ -157,8 +168,9 @@ def encode_example(
     tokenizer: AutoTokenizer,
     max_length: int,
     system_prompt: str,
+    assistant_target_style: str,
 ) -> SFTExample:
-    answer_text = build_assistant_target(str(record["answer"]))
+    answer_text = build_assistant_target(str(record["answer"]), style=assistant_target_style)
     prompt_messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": str(record["prompt"])},
@@ -198,6 +210,7 @@ def build_dataset(
     tokenizer: AutoTokenizer,
     max_length: int,
     system_prompt: str,
+    assistant_target_style: str,
 ) -> Dataset:
     encoded_rows = []
     for record in records:
@@ -206,6 +219,7 @@ def build_dataset(
             tokenizer=tokenizer,
             max_length=max_length,
             system_prompt=system_prompt,
+            assistant_target_style=assistant_target_style,
         )
         encoded_rows.append(
             {
@@ -327,6 +341,7 @@ def main() -> None:
         tokenizer=tokenizer,
         max_length=args.max_length,
         system_prompt=args.system_prompt,
+        assistant_target_style=args.assistant_target_style,
     )
     eval_dataset = None
     if val_records and not args.disable_eval:
@@ -335,6 +350,7 @@ def main() -> None:
             tokenizer=tokenizer,
             max_length=args.max_length,
             system_prompt=args.system_prompt,
+            assistant_target_style=args.assistant_target_style,
         )
 
     model = build_model(
@@ -443,3 +459,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
