@@ -49,6 +49,29 @@ def download_dir(sftp: paramiko.SFTPClient, remote_dir: str, local_dir: Path) ->
 def push_with_retries(repo_root: Path, retries: int, retry_delay_seconds: int) -> int:
     last_result: subprocess.CompletedProcess[str] | None = None
     for attempt in range(1, retries + 1):
+        pull = subprocess.run(
+            ["git", "pull", "--rebase", "--autostash", "origin", "master"],
+            cwd=repo_root,
+            text=True,
+            capture_output=True,
+        )
+        if pull.stdout.strip():
+            print(pull.stdout.strip())
+        if pull.returncode != 0:
+            last_result = pull
+            message = (pull.stderr or pull.stdout or "git pull --rebase failed").strip()
+            print(
+                f"warning: git pull --rebase failed (attempt {attempt}/{retries}): {message}",
+                file=sys.stderr,
+                flush=True,
+            )
+            if attempt < retries:
+                time.sleep(retry_delay_seconds)
+                continue
+            if pull.stderr.strip():
+                print(pull.stderr.strip(), file=sys.stderr)
+            return pull.returncode
+
         result = subprocess.run(
             ["git", "push", "origin", "master"],
             cwd=repo_root,
@@ -79,6 +102,7 @@ def sync_once(args: argparse.Namespace) -> int:
     repo_root = Path(__file__).resolve().parent.parent
     local_logs = repo_root / "outputs" / "logs"
     local_logs.mkdir(parents=True, exist_ok=True)
+    downloaded_paths: list[Path] = []
 
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -102,7 +126,9 @@ def sync_once(args: argparse.Namespace) -> int:
         f"{args.run_name}_running.txt",
     ]
     for name in base_files:
-        download_file(sftp, f"{remote_logs}/{name}", local_logs / name)
+        local_path = local_logs / name
+        if download_file(sftp, f"{remote_logs}/{name}", local_path):
+            downloaded_paths.append(local_path)
 
     latest_dir_rel = ""
     latest_path_rel = ""
@@ -116,25 +142,39 @@ def sync_once(args: argparse.Namespace) -> int:
     if latest_dir_rel:
         remote_dir = posixpath.join(args.remote_repo.rstrip("/"), latest_dir_rel)
         local_dir = repo_root / latest_dir_rel
-        download_dir(sftp, remote_dir, local_dir)
+        if download_dir(sftp, remote_dir, local_dir):
+            downloaded_paths.append(local_dir)
 
     if latest_path_rel:
         remote_file = posixpath.join(args.remote_repo.rstrip("/"), latest_path_rel)
         local_file = repo_root / latest_path_rel
-        download_file(sftp, remote_file, local_file)
+        if download_file(sftp, remote_file, local_file):
+            downloaded_paths.append(local_file)
 
     sftp.close()
     client.close()
 
-    git_status = subprocess.run(
-        ["git", "status", "--short", "outputs/logs"],
-        cwd=repo_root,
-        capture_output=True,
-        text=True,
-        check=True,
+    tracked_paths = sorted(
+        {
+            str(path.relative_to(repo_root))
+            for path in downloaded_paths
+            if path.exists() and repo_root in path.parents
+        }
     )
+
+    if tracked_paths:
+        subprocess.run(["git", "add", "--", *tracked_paths], cwd=repo_root, check=True)
+        git_status = subprocess.run(
+            ["git", "status", "--short", "--", *tracked_paths],
+            cwd=repo_root,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    else:
+        git_status = subprocess.CompletedProcess(args=[], returncode=0, stdout="", stderr="")
+
     if git_status.stdout.strip():
-        subprocess.run(["git", "add", "outputs/logs"], cwd=repo_root, check=True)
         commit = subprocess.run(
             ["git", "commit", "-m", f"chore: sync {args.run_name} status"],
             cwd=repo_root,
