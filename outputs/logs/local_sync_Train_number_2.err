@@ -1,1 +1,293 @@
 warning: in the working copy of 'outputs/logs/local_sync_Train_number_2.pid', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'outputs/logs/local_sync_Train_number_2.out', CRLF will be replaced by LF the next time Git touches it
+warning: git push failed (attempt 1/5): fatal: unable to access 'https://github.com/admmmmm/nvidia-nemotron-model-reasoning-challenge.git/': Recv failure: Connection was reset
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s
+Traceback (most recent call last):
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 177, in main
+    code = sync_once(args)
+           ^^^^^^^^^^^^^^^
+  File "D:\dev\NVIDIA Nemotron Model Reasoning Challenge\scripts\local_sync_remote_logs.py", line 85, in sync_once
+    client.connect(
+  File "C:\Users\adm14\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\paramiko\client.py", line 407, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 17844 on 180.127.11.167
+sync failed with code 1; retrying in 20s

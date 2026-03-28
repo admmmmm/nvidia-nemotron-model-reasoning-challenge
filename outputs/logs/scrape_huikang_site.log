@@ -1,0 +1,131 @@
+{"file": "problems.jsonl", "downloaded": true, "bytes": 648412}
+{"file": "generation.jsonl", "downloaded": true, "bytes": 4219888}
+{"file": "vocab.jsonl", "downloaded": true, "bytes": 5730506}
+{"stage": "problem_details", "jobs": 9500}
+{"completed": 200, "downloaded": 200, "skipped": 0, "last": "problems/055a8b01.jsonl"}
+{"completed": 400, "downloaded": 400, "skipped": 0, "last": "problems/0ab3d1de.jsonl"}
+{"completed": 600, "downloaded": 600, "skipped": 0, "last": "problems/0fe06e8c.jsonl"}
+{"completed": 800, "downloaded": 800, "skipped": 0, "last": "problems/14a72508.jsonl"}
+{"completed": 1000, "downloaded": 1000, "skipped": 0, "last": "problems/1a4da9d9.jsonl"}
+{"completed": 1200, "downloaded": 1200, "skipped": 0, "last": "problems/20010db2.jsonl"}
+{"completed": 1400, "downloaded": 1400, "skipped": 0, "last": "problems/259dc76d.jsonl"}
+{"completed": 1600, "downloaded": 1600, "skipped": 0, "last": "problems/2b4de8bd.jsonl"}
+{"completed": 1800, "downloaded": 1800, "skipped": 0, "last": "problems/309520eb.jsonl"}
+{"completed": 2000, "downloaded": 2000, "skipped": 0, "last": "problems/3595c82c.jsonl"}
+{"completed": 2200, "downloaded": 2200, "skipped": 0, "last": "problems/3b06ed13.jsonl"}
+{"completed": 2400, "downloaded": 2400, "skipped": 0, "last": "problems/412186a6.jsonl"}
+{"completed": 2600, "downloaded": 2600, "skipped": 0, "last": "problems/468bf9fc.jsonl"}
+{"completed": 2800, "downloaded": 2800, "skipped": 0, "last": "problems/4bc71cde.jsonl"}
+{"completed": 3000, "downloaded": 3000, "skipped": 0, "last": "problems/50f2caf4.jsonl"}
+{"completed": 3200, "downloaded": 3200, "skipped": 0, "last": "problems/559d4177.jsonl"}
+{"completed": 3400, "downloaded": 3400, "skipped": 0, "last": "problems/5b05cc20.jsonl"}
+{"completed": 3600, "downloaded": 3600, "skipped": 0, "last": "problems/6079c08f.jsonl"}
+{"completed": 3800, "downloaded": 3800, "skipped": 0, "last": "problems/65ad7211.jsonl"}
+{"completed": 4000, "downloaded": 4000, "skipped": 0, "last": "problems/6b769a9e.jsonl"}
+{"completed": 4200, "downloaded": 4200, "skipped": 0, "last": "problems/71391d1f.jsonl"}
+{"completed": 4400, "downloaded": 4400, "skipped": 0, "last": "problems/76d51969.jsonl"}
+{"completed": 4600, "downloaded": 4600, "skipped": 0, "last": "problems/7c95b4ad.jsonl"}
+{"completed": 4800, "downloaded": 4800, "skipped": 0, "last": "problems/81b6d789.jsonl"}
+{"completed": 5000, "downloaded": 5000, "skipped": 0, "last": "problems/86e91f7d.jsonl"}
+{"completed": 5200, "downloaded": 5200, "skipped": 0, "last": "problems/8c281ee9.jsonl"}
+{"completed": 5400, "downloaded": 5400, "skipped": 0, "last": "problems/918034e5.jsonl"}
+{"completed": 5600, "downloaded": 5600, "skipped": 0, "last": "problems/971d2540.jsonl"}
+{"completed": 5800, "downloaded": 5800, "skipped": 0, "last": "problems/9c9eacbd.jsonl"}
+{"completed": 6000, "downloaded": 6000, "skipped": 0, "last": "problems/a19a75ba.jsonl"}
+{"completed": 6200, "downloaded": 6200, "skipped": 0, "last": "problems/a6672f83.jsonl"}
+{"completed": 6400, "downloaded": 6400, "skipped": 0, "last": "problems/ab574811.jsonl"}
+{"completed": 6600, "downloaded": 6600, "skipped": 0, "last": "problems/b14fb614.jsonl"}
+{"completed": 6800, "downloaded": 6800, "skipped": 0, "last": "problems/b6879296.jsonl"}
+{"completed": 7000, "downloaded": 7000, "skipped": 0, "last": "problems/bc0e7856.jsonl"}
+{"completed": 7200, "downloaded": 7200, "skipped": 0, "last": "problems/c180cdec.jsonl"}
+{"completed": 7400, "downloaded": 7400, "skipped": 0, "last": "problems/c6c3376a.jsonl"}
+{"completed": 7600, "downloaded": 7600, "skipped": 0, "last": "problems/cc0fd7a8.jsonl"}
+{"completed": 7800, "downloaded": 7800, "skipped": 0, "last": "problems/d10d6a1f.jsonl"}
+{"completed": 8000, "downloaded": 8000, "skipped": 0, "last": "problems/d6e6f8b5.jsonl"}
+{"completed": 8200, "downloaded": 8200, "skipped": 0, "last": "problems/dbabfbdd.jsonl"}
+{"completed": 8400, "downloaded": 8400, "skipped": 0, "last": "problems/e206c8e6.jsonl"}
+{"completed": 8600, "downloaded": 8600, "skipped": 0, "last": "problems/e7b87b82.jsonl"}
+{"completed": 8800, "downloaded": 8800, "skipped": 0, "last": "problems/ecc1cf14.jsonl"}
+{"completed": 9000, "downloaded": 9000, "skipped": 0, "last": "problems/f2b23d11.jsonl"}
+{"completed": 9200, "downloaded": 9200, "skipped": 0, "last": "problems/f83118d7.jsonl"}
+{"completed": 9400, "downloaded": 9400, "skipped": 0, "last": "problems/fd5bb962.jsonl"}
+{"stage": "raw_tokens", "jobs": 11096}
+{"completed": 200, "downloaded": 200, "skipped": 0, "last": "raw/023739fe/03-21-08-06-42-d126.jsonl"}
+{"completed": 400, "downloaded": 400, "skipped": 0, "last": "raw/05195c8e/03-21-08-10-51-8238.jsonl"}
+{"completed": 600, "downloaded": 600, "skipped": 0, "last": "raw/0925e4c0/03-21-08-32-08-e7fd.jsonl"}
+{"completed": 800, "downloaded": 800, "skipped": 0, "last": "raw/0e25b790/03-21-08-44-21-23a7.jsonl"}
+{"completed": 1000, "downloaded": 1000, "skipped": 0, "last": "raw/12d4a2df/03-21-08-57-01-0261.jsonl"}
+{"completed": 1200, "downloaded": 1200, "skipped": 0, "last": "raw/185da1bb/03-21-09-01-58-5dc6.jsonl"}
+{"completed": 1400, "downloaded": 1400, "skipped": 0, "last": "raw/1e248995/03-21-09-17-56-9b3c.jsonl"}
+{"completed": 1600, "downloaded": 1600, "skipped": 0, "last": "raw/23800316/03-21-09-36-57-dbf0.jsonl"}
+{"completed": 1800, "downloaded": 1800, "skipped": 0, "last": "raw/292ffcee/03-21-09-41-28-88e0.jsonl"}
+{"completed": 2000, "downloaded": 2000, "skipped": 0, "last": "raw/2efd8e6f/03-21-09-52-59-7608.jsonl"}
+{"completed": 2200, "downloaded": 2200, "skipped": 0, "last": "raw/33ce7ec3/03-21-10-10-45-130c.jsonl"}
+{"completed": 2400, "downloaded": 2400, "skipped": 0, "last": "raw/3936fa34/03-21-10-25-40-3930.jsonl"}
+{"completed": 2600, "downloaded": 2600, "skipped": 0, "last": "raw/3ef9ab02/03-21-10-44-13-0bda.jsonl"}
+{"completed": 2800, "downloaded": 2800, "skipped": 0, "last": "raw/446e6bc9/03-21-10-57-41-6a0d.jsonl"}
+{"completed": 3000, "downloaded": 3000, "skipped": 0, "last": "raw/49f1c4dc/03-21-11-09-53-bb14.jsonl"}
+{"completed": 3200, "downloaded": 3200, "skipped": 0, "last": "raw/4ef88f92/03-21-11-23-45-ae77.jsonl"}
+{"completed": 3400, "downloaded": 3400, "skipped": 0, "last": "raw/540fce84/03-21-11-37-50-f59a.jsonl"}
+{"completed": 3600, "downloaded": 3600, "skipped": 0, "last": "raw/5923f138/03-21-11-51-52-1887.jsonl"}
+{"completed": 3800, "downloaded": 3800, "skipped": 0, "last": "raw/5e5182f0/03-21-12-05-26-fcec.jsonl"}
+{"completed": 4000, "downloaded": 4000, "skipped": 0, "last": "raw/63ec749f/03-21-12-17-29-f475.jsonl"}
+{"completed": 4200, "downloaded": 4200, "skipped": 0, "last": "raw/693caf69/03-21-12-25-34-6aa3.jsonl"}
+{"completed": 4400, "downloaded": 4400, "skipped": 0, "last": "raw/6ecc51b1/03-21-12-44-49-c6f0.jsonl"}
+{"completed": 4600, "downloaded": 4600, "skipped": 0, "last": "raw/71f5a517/03-21-14-04-41-39c4.jsonl"}
+{"completed": 4800, "downloaded": 4800, "skipped": 0, "last": "raw/74faaa05/03-21-13-53-13-d669.jsonl"}
+{"completed": 5000, "downloaded": 5000, "skipped": 0, "last": "raw/7781eb75/03-21-13-06-04-42a1.jsonl"}
+{"completed": 5200, "downloaded": 5200, "skipped": 0, "last": "raw/7a803dc3/03-21-13-06-55-b984.jsonl"}
+{"completed": 5400, "downloaded": 5400, "skipped": 0, "last": "raw/7d5a62f0/03-21-13-13-16-d938.jsonl"}
+{"completed": 5600, "downloaded": 5600, "skipped": 0, "last": "raw/7ff1a44d/03-21-13-27-15-3d57.jsonl"}
+{"completed": 5800, "downloaded": 5800, "skipped": 0, "last": "raw/826bf843/03-21-13-34-44-30c4.jsonl"}
+{"completed": 6000, "downloaded": 6000, "skipped": 0, "last": "raw/850dc715/03-21-13-20-46-f4ff.jsonl"}
+{"completed": 6200, "downloaded": 6200, "skipped": 0, "last": "raw/87bc4751/03-21-13-07-50-57a2.jsonl"}
+{"completed": 6400, "downloaded": 6400, "skipped": 0, "last": "raw/8a5b0cd9/03-21-12-57-08-7e8e.jsonl"}
+{"completed": 6600, "downloaded": 6600, "skipped": 0, "last": "raw/8ce54da2/03-21-12-55-54-8743.jsonl"}
+{"completed": 6800, "downloaded": 6800, "skipped": 0, "last": "raw/8fa7ea3a/03-21-14-07-30-5b6d.jsonl"}
+{"completed": 7000, "downloaded": 7000, "skipped": 0, "last": "raw/925f3e06/03-21-12-52-03-4b73.jsonl"}
+{"completed": 7200, "downloaded": 7200, "skipped": 0, "last": "raw/971d2540/03-21-12-33-26-869f.jsonl"}
+{"completed": 7400, "downloaded": 7400, "skipped": 0, "last": "raw/9ca2d781/03-21-12-17-53-1927.jsonl"}
+{"completed": 7600, "downloaded": 7600, "skipped": 0, "last": "raw/a1c1f44c/03-21-12-09-05-5cdf.jsonl"}
+{"completed": 7800, "downloaded": 7800, "skipped": 0, "last": "raw/a69f1af5/03-21-11-55-38-15a0.jsonl"}
+{"completed": 8000, "downloaded": 8000, "skipped": 0, "last": "raw/ab7809d1/03-21-11-42-35-c8fa.jsonl"}
+{"completed": 8200, "downloaded": 8200, "skipped": 0, "last": "raw/b15a1ff8/03-21-11-19-53-d9df.jsonl"}
+{"completed": 8400, "downloaded": 8400, "skipped": 0, "last": "raw/b6cd1807/03-21-11-16-18-6878.jsonl"}
+{"completed": 8600, "downloaded": 8600, "skipped": 0, "last": "raw/bc1ef494/03-21-11-01-20-327b.jsonl"}
+{"completed": 8800, "downloaded": 8800, "skipped": 0, "last": "raw/c1935859/03-21-10-38-12-2a5c.jsonl"}
+{"completed": 9000, "downloaded": 9000, "skipped": 0, "last": "raw/c6da25af/03-21-10-35-21-da91.jsonl"}
+{"completed": 9200, "downloaded": 9200, "skipped": 0, "last": "raw/cc4ee1b4/03-21-10-11-30-a593.jsonl"}
+{"completed": 9400, "downloaded": 9400, "skipped": 0, "last": "raw/d12ac19d/03-21-10-06-23-1541.jsonl"}
+{"completed": 9600, "downloaded": 9600, "skipped": 0, "last": "raw/d6f4e854/03-21-09-54-46-ddb2.jsonl"}
+{"completed": 9800, "downloaded": 9800, "skipped": 0, "last": "raw/dbc31a23/03-21-09-33-03-6486.jsonl"}
+{"completed": 10000, "downloaded": 10000, "skipped": 0, "last": "raw/e212c6fd/03-21-09-27-44-c678.jsonl"}
+{"completed": 10200, "downloaded": 10200, "skipped": 0, "last": "raw/e7ddff5c/03-21-09-08-23-aea6.jsonl"}
+{"completed": 10400, "downloaded": 10400, "skipped": 0, "last": "raw/ece27af7/03-21-08-56-04-78fd.jsonl"}
+{"completed": 10600, "downloaded": 10600, "skipped": 0, "last": "raw/f2b4fd96/03-21-08-45-39-dcc6.jsonl"}
+{"completed": 10800, "downloaded": 10800, "skipped": 0, "last": "raw/f84652b8/03-21-08-23-54-40a3.jsonl"}
+{"completed": 11000, "downloaded": 11000, "skipped": 0, "last": "raw/fd7712cc/03-21-08-07-38-d033.jsonl"}
+{
+  "base_url": "https://nemotron.huikang.dev",
+  "output_dir": "data\\external\\nemotron_huikang_dev",
+  "problems_index_rows": 9500,
+  "generation_index_rows": 9500,
+  "generation_summary": {
+    "problems": 9500,
+    "raw_runs": 11096,
+    "solved": 4423,
+    "partial": 339,
+    "unsolved": 4738
+  },
+  "problem_details": {
+    "downloaded": 9500,
+    "skipped": 0,
+    "bytes_downloaded": 6674591
+  },
+  "raw_tokens": {
+    "downloaded": 11096,
+    "skipped": 0,
+    "bytes_downloaded": 2180226724
+  },
+  "elapsed_seconds": 1031.45
+}
