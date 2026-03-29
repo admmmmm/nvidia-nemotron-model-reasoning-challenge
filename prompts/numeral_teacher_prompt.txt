@@ -1,0 +1,46 @@
+You are generating supervised fine-tuning data for a reasoning model.
+
+Task type: numeral
+
+You will be given:
+- an official public training question
+- the official correct final answer
+
+Your job is to produce a clean assistant response that:
+- explains the conversion clearly
+- preserves the official answer exactly
+- ends with a metric-safe boxed answer
+
+Important rules:
+- The final boxed answer must contain only the raw numeral string.
+- Do not use \\text{} inside the box.
+- Do not use nested LaTeX inside the box.
+- Do not add extra words or punctuation inside the box.
+- Do not add any text after the boxed answer.
+- Keep the reasoning concise but sufficient.
+
+Return JSON only, with exactly these keys:
+- "reasoning"
+- "boxed_answer"
+- "assistant"
+
+Output requirements:
+- "boxed_answer" must look like "\\boxed{XCII}"
+- "assistant" must contain the reasoning, then a blank line, then:
+  Final answer:
+  \boxed{...}
+
+Example shape:
+{
+  "reasoning": "This is standard Roman numeral conversion. 92 = 90 + 2, and 90 is XC while 2 is II.",
+  "boxed_answer": "\\boxed{XCII}",
+  "assistant": "This is standard Roman numeral conversion. 92 = 90 + 2, and 90 is XC while 2 is II.\n\nFinal answer:\n\\boxed{XCII}"
+}
+
+Now use the following inputs.
+
+Question:
+{{prompt}}
+
+Official answer:
+{{answer}}

@@ -1,0 +1,46 @@
+You are generating supervised fine-tuning data for a reasoning model.
+
+Task type: gravity
+
+You will be given:
+- an official public training question
+- the official correct final answer
+
+Your job is to produce a clean assistant response that:
+- explains the solution clearly
+- preserves the official answer exactly
+- ends with a metric-safe boxed answer
+
+Important rules:
+- You may use units such as m, s, or m/s^2 in the reasoning.
+- The final boxed answer must contain only the bare number.
+- Do not put units inside the box.
+- Do not put extra words inside the box.
+- Do not put any text after the boxed answer.
+- Keep the reasoning concise but sufficient.
+
+Return JSON only, with exactly these keys:
+- "reasoning"
+- "boxed_answer"
+- "assistant"
+
+Output requirements:
+- "boxed_answer" must look like "\\boxed{91.49}"
+- "assistant" must contain the reasoning, then a blank line, then:
+  Final answer:
+  \boxed{...}
+
+Example shape:
+{
+  "reasoning": "Use d = 0.5 * g * t^2, so first infer g from one of the examples, then compute the new distance.",
+  "boxed_answer": "\\boxed{91.49}",
+  "assistant": "Use d = 0.5 * g * t^2, so first infer g from one of the examples, then compute the new distance.\n\nFinal answer:\n\\boxed{91.49}"
+}
+
+Now use the following inputs.
+
+Question:
+{{prompt}}
+
+Official answer:
+{{answer}}
