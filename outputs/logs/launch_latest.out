@@ -18,4 +18,4 @@ FORCE_FULL_GPU=1
 ASSISTANT_TARGET_STYLE=boxed_final_line
 RUN_LOG_DIR=outputs/logs/Train_number_4
 LOG_FILE=outputs/logs/Train_number_4/train_20260402_1007.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:24<04:57, 24.77s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:50<04:39, 25.41s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:17<04:22, 26.23s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:47<04:09, 27.71s/it]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:24<04:57, 24.77s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:50<04:39, 25.41s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:17<04:22, 26.23s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:47<04:09, 27.71s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [02:21<04:00, 30.03s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [02:51<03:30, 30.02s/it]
