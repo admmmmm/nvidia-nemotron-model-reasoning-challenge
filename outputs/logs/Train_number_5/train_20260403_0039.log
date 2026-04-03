@@ -1,1 +1,26 @@
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:25<05:04, 25.40s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:51<04:43, 25.74s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:17<04:19, 25.95s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:43<03:53, 25.94s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [02:09<03:27, 25.91s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [02:37<03:07, 26.83s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [03:04<02:40, 26.83s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [03:31<02:13, 26.66s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [03:57<01:46, 26.56s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [04:23<01:19, 26.40s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [04:43<00:49, 24.52s/it]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:25<05:04, 25.40s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:51<04:43, 25.74s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [01:17<04:19, 25.95s/it]Loading checkpoint shards:  31%|███       | 4/13 [01:43<03:53, 25.94s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [02:09<03:27, 25.91s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [02:37<03:07, 26.83s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [03:04<02:40, 26.83s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [03:31<02:13, 26.66s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [03:57<01:46, 26.56s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [04:23<01:19, 26.40s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [04:43<00:49, 24.52s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [05:03<00:22, 22.96s/it]Loading checkpoint shards: 100%|██████████| 13/13 [05:15<00:00, 19.75s/it]Loading checkpoint shards: 100%|██████████| 13/13 [05:15<00:00, 24.27s/it]
+[RANK 0] Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Patched Nemotron MoE dtype handlers: 23
+LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
+  0%|          | 0/282 [00:00<?, ?it/s]
