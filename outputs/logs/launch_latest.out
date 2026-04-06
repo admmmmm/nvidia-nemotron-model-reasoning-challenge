@@ -4,3 +4,21 @@
   "unit_conversion": 1594,
   "roman": 1576
 }
+=== effective runtime config ===
+RUN_NAME=GRPO_core_numeric_v1
+RUN_FOLDER_NAME=GRPO_core_numeric_v1
+MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+DATASET_FILE=data/rl/grpo_core_numeric_v1.jsonl
+GRPO_TASKS=gravity,unit_conversion,roman
+INIT_ADAPTER_DIR=outputs/adapters/nemotron_lora_v0
+MAX_PROMPT_LENGTH=1536
+MAX_COMPLETION_LENGTH=256
+NUM_GENERATIONS=4
+LEARNING_RATE=1e-5
+BETA=0.04
+TEMPERATURE=1.0
+TOP_P=1.0
+RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1
+LOG_FILE=outputs/logs/GRPO_core_numeric_v1/train_20260406_1403.log
+GRPO training requires a TRL build that exposes GRPOTrainer/GRPOConfig. Current trl version: not installed. Please install a newer build, for example trl==1.0.0. Original import error: No module named 'trl'
+GRPO training failed. Log: outputs/logs/GRPO_core_numeric_v1/train_20260406_1403.log
