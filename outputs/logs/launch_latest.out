@@ -14,3 +14,4 @@ TEMPERATURE=1.0
 TOP_P=1.0
 RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1
 LOG_FILE=outputs/logs/GRPO_core_numeric_v1/train_20260407_1124.log
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:09<01:58,  9.83s/it]
