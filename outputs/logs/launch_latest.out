@@ -1,6 +1,6 @@
 === effective runtime config ===
-RUN_NAME=GRPO_core_numeric_v1_smoke
-RUN_FOLDER_NAME=GRPO_core_numeric_v1_smoke
+RUN_NAME=GRPO_core_numeric_v1
+RUN_FOLDER_NAME=GRPO_core_numeric_v1
 MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
 DATASET_FILE=data/rl/grpo_core_numeric_v1.jsonl
 GRPO_TASKS=gravity,unit_conversion,roman
@@ -12,21 +12,5 @@ LEARNING_RATE=1e-5
 BETA=0.04
 TEMPERATURE=1.0
 TOP_P=1.0
-RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1_smoke
-LOG_FILE=outputs/logs/GRPO_core_numeric_v1_smoke/train_20260407_1100.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:10<02:00, 10.05s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:20<01:54, 10.41s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:31<01:45, 10.56s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:42<01:36, 10.71s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [00:53<01:26, 10.77s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:04<01:16, 10.87s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:15<01:05, 10.87s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:25<00:54, 10.82s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [01:36<00:43, 10.90s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [01:47<00:32, 10.91s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [01:58<00:21, 10.92s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [02:09<00:10, 10.83s/it]Loading checkpoint shards: 100%|██████████| 13/13 [02:15<00:00,  9.44s/it]Loading checkpoint shards: 100%|██████████| 13/13 [02:15<00:00, 10.44s/it]
-/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/training_args.py:1568: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
-  warnings.warn(
-Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-max_steps is given, it will override any value given in num_train_epochs
-Patched Nemotron MoE dtype handlers: 23
-  0%|          | 0/1 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
-/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/utils/checkpoint.py:61: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
-  warnings.warn(
-/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/utils/checkpoint.py:61: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
-  warnings.warn(
-100%|██████████| 1/1 [14:47<00:00, 887.72s/it]                                              100%|██████████| 1/1 [14:47<00:00, 887.72s/it]                                              100%|██████████| 1/1 [14:52<00:00, 887.72s/it]100%|██████████| 1/1 [14:52<00:00, 892.90s/it]
-{'loss': -0.0961, 'grad_norm': 418982616104960.0, 'learning_rate': 0.0, 'num_tokens': 4957.0, 'completions/mean_length': 240.3125, 'completions/min_length': 5.0, 'completions/max_length': 256.0, 'completions/clipped_ratio': 0.9375, 'completions/mean_terminated_length': 5.0, 'completions/min_terminated_length': 5.0, 'completions/max_terminated_length': 5.0, 'rewards/route_total_reward/mean': -0.03750000149011612, 'rewards/route_total_reward/std': 0.09705668687820435, 'reward': -0.03750000149011612, 'reward_std': 0.10322012007236481, 'kl': 0.012475921656005085, 'clip_ratio/low_mean': 0.0, 'clip_ratio/low_min': 0.0, 'clip_ratio/high_mean': 0.0, 'clip_ratio/high_max': 0.0, 'clip_ratio/region_mean': 0.0, 'epoch': 0.0}
-{'train_runtime': 892.9285, 'train_samples_per_second': 0.018, 'train_steps_per_second': 0.001, 'train_loss': -0.09605701267719269, 'epoch': 0.0}
-Saved GRPO adapter to outputs/adapters/nemotron_lora_v0
-GRPO training finished successfully. Log: outputs/logs/GRPO_core_numeric_v1_smoke/train_20260407_1100.log
+RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1
+LOG_FILE=outputs/logs/GRPO_core_numeric_v1/train_20260407_1124.log
