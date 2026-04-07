@@ -14,3 +14,7 @@ TEMPERATURE=1.0
 TOP_P=1.0
 RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1
 LOG_FILE=outputs/logs/GRPO_core_numeric_v1/train_20260407_0820.log
+/home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: 'Could not load this library: /home/vipuser/anaconda3/envs/nemotron_mamba/lib/python3.10/site-packages/torchvision/image.so'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+GRPO training requires a TRL build that exposes GRPOTrainer/GRPOConfig. Current trl version: not installed. Please install a newer build, for example trl==1.0.0. Original import error: No module named 'trl'
+GRPO training failed. Log: outputs/logs/GRPO_core_numeric_v1/train_20260407_0820.log
