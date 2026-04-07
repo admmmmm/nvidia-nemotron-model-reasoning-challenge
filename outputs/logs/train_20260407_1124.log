@@ -8,4 +8,4 @@ Patched Nemotron MoE dtype handlers: 23
   warnings.warn(
 /home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/utils/checkpoint.py:61: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
   warnings.warn(
-  0%|          | 1/1191 [14:22<285:01:45, 862.27s/it]
+  0%|          | 1/1191 [14:22<285:01:45, 862.27s/it]  0%|          | 2/1191 [28:26<281:15:06, 851.56s/it]
