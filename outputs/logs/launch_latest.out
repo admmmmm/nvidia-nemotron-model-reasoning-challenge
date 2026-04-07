@@ -1,168 +1,16 @@
 === effective runtime config ===
-RUN_NAME=GRPO_core_numeric_v1
-RUN_FOLDER_NAME=GRPO_core_numeric_v1
+RUN_NAME=GRPO_core_numeric_v1_smoke
+RUN_FOLDER_NAME=GRPO_core_numeric_v1_smoke
 MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
 DATASET_FILE=data/rl/grpo_core_numeric_v1.jsonl
 GRPO_TASKS=gravity,unit_conversion,roman
 INIT_ADAPTER_DIR=outputs/adapters/nemotron_lora_v0
 MAX_PROMPT_LENGTH=1536
-MAX_COMPLETION_LENGTH=192
+MAX_COMPLETION_LENGTH=256
 NUM_GENERATIONS=4
 LEARNING_RATE=1e-5
 BETA=0.04
 TEMPERATURE=1.0
 TOP_P=1.0
-RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1
-LOG_FILE=outputs/logs/GRPO_core_numeric_v1/train_20260407_0822.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:08<01:41,  8.46s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:17<01:36,  8.80s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:26<01:29,  8.92s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:35<01:20,  8.93s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [00:44<01:11,  8.97s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [00:54<01:04,  9.20s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:04<00:56,  9.46s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:13<00:47,  9.48s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [01:23<00:38,  9.57s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [01:32<00:28,  9.54s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [01:42<00:19,  9.54s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [01:51<00:09,  9.47s/it]Loading checkpoint shards: 100%|██████████| 13/13 [01:57<00:00,  8.26s/it]Loading checkpoint shards: 100%|██████████| 13/13 [01:57<00:00,  9.02s/it]
-/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/training_args.py:1568: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
-  warnings.warn(
-Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-Patched Nemotron MoE dtype handlers: 23
-  0%|          | 0/1191 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
-Traceback (most recent call last):
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/nemotron/src/train/grpo_local.py", line 395, in <module>
-    main()
-  File "/root/nemotron/src/train/grpo_local.py", line 382, in main
-    trainer.train()
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 2123, in train
-    return inner_training_loop(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
-    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 3573, in training_step
-    inputs = self._prepare_inputs(inputs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/trl/extras/profiling.py", line 87, in wrapper
-    return func(self, *args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/trl/trainer/grpo_trainer.py", line 899, in _prepare_inputs
-    accumulated_local_batch = self._generate_and_score_completions(accumulated_local_batch)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/trl/trainer/grpo_trainer.py", line 974, in _generate_and_score_completions
-    prompt_completion_ids = unwrapped_model.generate(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/peft/peft_model.py", line 1704, in generate
-    outputs = self.base_model.generate(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
-    return func(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/generation/utils.py", line 2215, in generate
-    result = self._sample(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/generation/utils.py", line 3206, in _sample
-    outputs = self(**model_inputs, return_dict=True)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 1702, in forward
-    nemotron_h_outputs = self.backbone(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 1489, in forward
-    hidden_states = self._gradient_checkpointing_func(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
-    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 328, in _fn
-    return fn(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/_dynamo/external_utils.py", line 17, in inner
-    return fn(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 451, in checkpoint
-    return CheckpointFunction.apply(function, preserve, *args)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/autograd/function.py", line 539, in apply
-    return super().apply(*args, **kwargs)  # type: ignore[misc]
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/utils/checkpoint.py", line 230, in forward
-    outputs = run_function(*args)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 777, in forward
-    hidden_states = self.mixer(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 715, in forward
-    return self.cuda_kernels_forward(hidden_states, cache_params, cache_position, attention_mask)
-  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 429, in cuda_kernels_forward
-    out = mamba_split_conv1d_scan_combined(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py", line 912, in mamba_split_conv1d_scan_combined
-    return MambaSplitConv1dScanCombinedFn.apply(zxbcdt, conv1d_weight, conv1d_bias, dt_bias, A, D, chunk_size, initial_states, seq_idx, dt_limit, return_final_states, activation, rmsnorm_weight, rmsnorm_eps, outproj_weight, outproj_bias, headdim, ngroups, norm_before_gate)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/autograd/function.py", line 539, in apply
-    return super().apply(*args, **kwargs)  # type: ignore[misc]
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/cuda/amp/autocast_mode.py", line 113, in decorate_fwd
-    return fwd(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/mamba_ssm/ops/triton/ssd_combined.py", line 761, in forward
-    causal_conv1d_cuda.causal_conv1d_fwd(rearrange(xBC, "b s d -> b d s"),
-TypeError: causal_conv1d_fwd(): incompatible function arguments. The following argument types are supported:
-    1. (arg0: torch.Tensor, arg1: torch.Tensor, arg2: Optional[torch.Tensor], arg3: Optional[torch.Tensor], arg4: bool) -> torch.Tensor
-
-Invoked with: tensor([[[  0.1049,   0.1049,   0.1049,  ...,  -0.3712,  -0.7087,  -0.4756],
-         [  0.6672,   0.6672,   0.6672,  ...,  -1.9915,  -0.2074,   0.4695],
-         [  1.1984,   1.1984,   1.1984,  ...,   0.7882,  -0.2104,  -0.7221],
-         ...,
-         [ -0.2075,  -0.2075,  -0.2075,  ...,   5.3481,   9.4846, -11.1761],
-         [  3.2052,   3.2052,   3.2052,  ...,   1.4211,  -2.0452,   7.9352],
-         [  1.0264,   1.0264,   1.0264,  ...,   0.1644,  -0.4736,  -0.2364]],
-
-        [[  0.1049,   0.1049,   0.1049,  ...,  -0.3712,  -0.7087,  -0.4756],
-         [  0.6672,   0.6672,   0.6672,  ...,  -1.9915,  -0.2074,   0.4695],
-         [  1.1984,   1.1984,   1.1984,  ...,   0.7882,  -0.2104,  -0.7221],
-         ...,
-         [ -0.2075,  -0.2075,  -0.2075,  ...,   5.3481,   9.4846, -11.1761],
-         [  3.2052,   3.2052,   3.2052,  ...,   1.4211,  -2.0452,   7.9352],
-         [  1.0264,   1.0264,   1.0264,  ...,   0.1644,  -0.4736,  -0.2364]],
-
-        [[  0.1049,   0.1049,   0.1049,  ...,  -0.3712,  -0.7087,  -0.4756],
-         [  0.6672,   0.6672,   0.6672,  ...,  -1.9915,  -0.2074,   0.4695],
-         [  1.1984,   1.1984,   1.1984,  ...,   0.7882,  -0.2104,  -0.7221],
-         ...,
-         [ -0.2075,  -0.2075,  -0.2075,  ...,   5.3481,   9.4846, -11.1761],
-         [  3.2052,   3.2052,   3.2052,  ...,   1.4211,  -2.0452,   7.9352],
-         [  1.0264,   1.0264,   1.0264,  ...,   0.1644,  -0.4736,  -0.2364]],
-
-        ...,
-
-        [[  0.1049,   0.1049,   0.1049,  ...,  -0.3712,  -0.7087,  -0.4756],
-         [  0.6672,   0.6672,   0.6672,  ...,  -1.9915,  -0.2074,   0.4695],
-         [  1.1984,   1.1984,   1.1984,  ...,   0.7882,  -0.2104,  -0.7221],
-         ...,
-         [ -0.2075,  -0.2075,  -0.2075,  ...,   5.3481,   9.4846, -11.1761],
-         [  3.2052,   3.2052,   3.2052,  ...,   1.4211,  -2.0452,   7.9352],
-         [  1.0264,   1.0264,   1.0264,  ...,   0.1644,  -0.4736,  -0.2364]],
-
-        [[  0.1049,   0.1049,   0.1049,  ...,  -0.3712,  -0.7087,  -0.4756],
-         [  0.6672,   0.6672,   0.6672,  ...,  -1.9915,  -0.2074,   0.4695],
-         [  1.1984,   1.1984,   1.1984,  ...,   0.7882,  -0.2104,  -0.7221],
-         ...,
-         [ -0.2075,  -0.2075,  -0.2075,  ...,   5.3481,   9.4846, -11.1761],
-         [  3.2052,   3.2052,   3.2052,  ...,   1.4211,  -2.0452,   7.9352],
-         [  1.0264,   1.0264,   1.0264,  ...,   0.1644,  -0.4736,  -0.2364]],
-
-        [[  0.1049,   0.1049,   0.1049,  ...,  -0.3712,  -0.7087,  -0.4756],
-         [  0.6672,   0.6672,   0.6672,  ...,  -1.9915,  -0.2074,   0.4695],
-         [  1.1984,   1.1984,   1.1984,  ...,   0.7882,  -0.2104,  -0.7221],
-         ...,
-         [ -0.2075,  -0.2075,  -0.2075,  ...,   5.3481,   9.4846, -11.1761],
-         [  3.2052,   3.2052,   3.2052,  ...,   1.4211,  -2.0452,   7.9352],
-         [  1.0264,   1.0264,   1.0264,  ...,   0.1644,  -0.4736,  -0.2364]]],
-       device='cuda:0'), tensor([[-0.0015,  0.0664,  0.0019, -0.0015],
-        [ 0.0012,  0.0002,  0.0874, -0.0027],
-        [ 0.0004,  0.0046, -0.0659,  0.0004],
-        ...,
-        [ 0.0104,  0.0525,  0.1426,  0.1562],
-        [-0.0117, -0.0150, -0.0339,  0.1196],
-        [-0.0454, -0.0825,  0.0334, -0.0474]], device='cuda:0'), Parameter containing:
-tensor([ 0.0059, -0.0249,  0.0093,  ..., -0.2520, -0.0618, -0.0674],
-       device='cuda:0'), None, None, None, True
-  0%|          | 0/1191 [00:00<?, ?it/s]
-GRPO training failed. Log: outputs/logs/GRPO_core_numeric_v1/train_20260407_0822.log
+RUN_LOG_DIR=outputs/logs/GRPO_core_numeric_v1_smoke
+LOG_FILE=outputs/logs/GRPO_core_numeric_v1_smoke/train_20260407_1057.log
