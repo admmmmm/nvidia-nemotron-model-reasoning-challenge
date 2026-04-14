@@ -1,24 +1,0 @@
-Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-=== effective runtime config ===
-RUN_NAME=RSFT_programmatic_core_plus_symbol_v1
-RUN_FOLDER_NAME=RSFT_programmatic_core_plus_symbol_v1
-MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
-MAX_LENGTH=8192
-BATCH(train/eval)=2/1
-GRAD_ACC=8
-MAX_MEMORY_GPU=39GiB
-MAX_MEMORY_CPU=48GiB
-MAX_GRAD_NORM=1.0
-EVALUATION_STRATEGY=no
-SAVE_STRATEGY=epoch
-DISABLE_EVAL=1
-LOCAL_FILES_ONLY=1
-FORCE_FULL_GPU=1
-ASSISTANT_TARGET_STYLE=boxed_final_line
-INIT_ADAPTER_DIR=
-RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v1
-LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v1/train_20260414_0649.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:09<01:48,  9.04s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:18<01:42,  9.33s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:28<01:34,  9.46s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:38<01:27,  9.73s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [00:48<01:18,  9.76s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [00:58<01:08,  9.85s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:07<00:58,  9.80s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:17<00:48,  9.73s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [01:27<00:39,  9.89s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [01:37<00:29,  9.75s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [01:58<00:26, 13.27s/it]/root/nemotron/scripts/run_nemotron_lora.sh: line 240:  6473 Killed                  "${cmd[@]}" 2>&1
-      6474 Done                    | tee "$LOG_FILE"
-Training failed. Log: outputs/logs/RSFT_programmatic_core_plus_symbol_v1/train_20260414_0649.log
