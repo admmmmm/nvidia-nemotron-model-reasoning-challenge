@@ -20,4 +20,31 @@ ASSISTANT_TARGET_STYLE=boxed_final_line
 INIT_ADAPTER_DIR=
 RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v2
 LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v2/train_20260414_0857.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:10<02:02, 10.21s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:24<02:16, 12.40s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:38<02:12, 13.23s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:51<01:59, 13.26s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:02<01:39, 12.43s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:19<01:36, 13.77s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:34<01:25, 14.18s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:53<01:18, 15.75s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:13<01:08, 17.05s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [02:28<00:49, 16.65s/it]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:10<02:02, 10.21s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:24<02:16, 12.40s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:38<02:12, 13.23s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:51<01:59, 13.26s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:02<01:39, 12.43s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:19<01:36, 13.77s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:34<01:25, 14.18s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:53<01:18, 15.75s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:13<01:08, 17.05s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [02:28<00:49, 16.65s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [02:49<00:35, 17.88s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:05<00:17, 17.47s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:14<00:00, 14.78s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:14<00:00, 14.97s/it]
+/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/training_args.py:1568: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Patched Nemotron MoE dtype handlers: 23
+LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
+  0%|          | 0/492 [00:00<?, ?it/s]
