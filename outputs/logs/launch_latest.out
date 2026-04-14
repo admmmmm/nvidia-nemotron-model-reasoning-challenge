@@ -1,0 +1,23 @@
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+huggingface login ok
+=== effective runtime config ===
+RUN_NAME=RSFT_programmatic_core_plus_symbol_v5_6k
+RUN_FOLDER_NAME=RSFT_programmatic_core_plus_symbol_v5_6k
+MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+MAX_LENGTH=6144
+PER_CATEGORY_MAX_LENGTHS=bit_manipulation=6144,equation_numeric=6144,gravity=6144,unit_conversion=6144,cipher=6144,numeral=6144
+BATCH(train/eval)=1/1
+GRAD_ACC=8
+MAX_MEMORY_GPU=28GiB
+MAX_MEMORY_CPU=56GiB
+MAX_GRAD_NORM=1.0
+EVALUATION_STRATEGY=no
+SAVE_STRATEGY=epoch
+DISABLE_EVAL=1
+LOCAL_FILES_ONLY=1
+FORCE_FULL_GPU=0
+ASSISTANT_TARGET_STYLE=boxed_final_line
+INIT_ADAPTER_DIR=
+RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v5_6k
+LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v5_6k/train_20260414_0954.log
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]
