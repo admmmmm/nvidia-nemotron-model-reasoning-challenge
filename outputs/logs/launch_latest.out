@@ -46,4 +46,4 @@ Sample trainable parameter names:
   - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
   - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
   - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
-  0%|          | 0/564 [00:00<?, ?it/s]
+  0%|          | 0/564 [00:00<?, ?it/s]  0%|          | 1/564 [00:58<9:11:11, 58.74s/it]  0%|          | 2/564 [01:39<7:32:15, 48.28s/it]
