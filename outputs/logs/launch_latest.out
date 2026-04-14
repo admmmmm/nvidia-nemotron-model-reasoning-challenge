@@ -20,4 +20,4 @@ ASSISTANT_TARGET_STYLE=boxed_final_line
 INIT_ADAPTER_DIR=
 RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v3_offload
 LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v3_offload/train_20260414_0911.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:15<03:00, 15.05s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:33<03:06, 16.98s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:45<02:29, 14.91s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:58<02:06, 14.01s/it]
