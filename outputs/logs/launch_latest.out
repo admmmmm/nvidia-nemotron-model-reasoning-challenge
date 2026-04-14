@@ -1,91 +1,0 @@
-Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
-huggingface login ok
-=== effective runtime config ===
-RUN_NAME=RSFT_programmatic_core_plus_symbol_v2
-RUN_FOLDER_NAME=RSFT_programmatic_core_plus_symbol_v2
-MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
-MAX_LENGTH=8192
-PER_CATEGORY_MAX_LENGTHS=bit_manipulation=8192,equation_numeric=7168,gravity=4096,unit_conversion=3072,cipher=2048,numeral=1024
-BATCH(train/eval)=2/1
-GRAD_ACC=8
-MAX_MEMORY_GPU=48GiB
-MAX_MEMORY_CPU=64GiB
-MAX_GRAD_NORM=1.0
-EVALUATION_STRATEGY=no
-SAVE_STRATEGY=epoch
-DISABLE_EVAL=1
-LOCAL_FILES_ONLY=1
-FORCE_FULL_GPU=1
-ASSISTANT_TARGET_STYLE=boxed_final_line
-INIT_ADAPTER_DIR=
-RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v2
-LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v2/train_20260414_0857.log
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:10<02:02, 10.21s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:24<02:16, 12.40s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:38<02:12, 13.23s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:51<01:59, 13.26s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:02<01:39, 12.43s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:19<01:36, 13.77s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:34<01:25, 14.18s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:53<01:18, 15.75s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:13<01:08, 17.05s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [02:28<00:49, 16.65s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [02:49<00:35, 17.88s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:05<00:17, 17.47s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:14<00:00, 14.78s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:14<00:00, 14.97s/it]
-/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/training_args.py:1568: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
-  warnings.warn(
-Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
-Patched Nemotron MoE dtype handlers: 23
-LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
-Sample trainable parameter names:
-  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
-  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
-  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
-  0%|          | 0/492 [00:00<?, ?it/s]Traceback (most recent call last):
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/root/nemotron/src/train/sft_local.py", line 640, in <module>
-    main()
-  File "/root/nemotron/src/train/sft_local.py", line 629, in main
-    trainer.train()
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 2123, in train
-    return inner_training_loop(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
-    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 3579, in training_step
-    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 3633, in compute_loss
-    outputs = model(**inputs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/utils/operations.py", line 823, in forward
-    return model_forward(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/utils/operations.py", line 811, in __call__
-    return convert_to_fp32(self.model_forward(*args, **kwargs))
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
-    return func(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/peft/peft_model.py", line 1644, in forward
-    return self.base_model(
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
-    return self.model.forward(*args, **kwargs)
-  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
-    output = module._old_forward(*args, **kwargs)
-  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 1724, in forward
-    shift_logits = logits[..., :-1, :].contiguous()
-torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.54 GiB. GPU 0 has a total capacty of 39.39 GiB of which 3.16 GiB is free. Including non-PyTorch memory, this process has 36.21 GiB memory in use. Of the allocated memory 33.83 GiB is allocated by PyTorch, and 1.85 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
-  0%|          | 0/492 [00:30<?, ?it/s]
-Training failed. Log: outputs/logs/RSFT_programmatic_core_plus_symbol_v2/train_20260414_0857.log
