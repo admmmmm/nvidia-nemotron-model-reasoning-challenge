@@ -5,7 +5,7 @@ RUN_NAME=RSFT_programmatic_core_plus_symbol_v2
 RUN_FOLDER_NAME=RSFT_programmatic_core_plus_symbol_v2
 MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
 MAX_LENGTH=8192
-PER_CATEGORY_MAX_LENGTHS={\binary\:8192,\symbol_digit\:7168,\gravity\:4096,\unit_conversion\:3072,\cipher\:2048,\roman\:1024}
+PER_CATEGORY_MAX_LENGTHS={binary:8192,symbol_digit:7168,gravity:4096,unit_conversion:3072,cipher:2048,roman:1024}
 BATCH(train/eval)=2/1
 GRAD_ACC=8
 MAX_MEMORY_GPU=39GiB
@@ -19,6 +19,4 @@ FORCE_FULL_GPU=1
 ASSISTANT_TARGET_STYLE=boxed_final_line
 INIT_ADAPTER_DIR=
 RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v2
-LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v2/train_20260414_0833.log
---per-category-max-lengths must be valid JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
-Training failed. Log: outputs/logs/RSFT_programmatic_core_plus_symbol_v2/train_20260414_0833.log
+LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v2/train_20260414_0839.log
