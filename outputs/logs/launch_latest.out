@@ -21,3 +21,30 @@ INIT_ADAPTER_DIR=
 RUN_LOG_DIR=outputs/logs/RSFT_programmatic_core_plus_symbol_v4_offload_b1
 LOG_FILE=outputs/logs/RSFT_programmatic_core_plus_symbol_v4_offload_b1/train_20260414_0917.log
 Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:12<02:34, 12.84s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:30<02:53, 15.77s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:45<02:33, 15.32s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:59<02:13, 14.87s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [01:14<01:59, 14.93s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:32<01:51, 15.99s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:49<01:37, 16.29s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [02:03<01:17, 15.46s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [02:22<01:06, 16.55s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [02:40<00:50, 16.99s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [02:59<00:35, 17.59s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [03:15<00:17, 17.21s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:21<00:00, 13.80s/it]Loading checkpoint shards: 100%|██████████| 13/13 [03:21<00:00, 15.50s/it]
+/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/training_args.py:1568: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Patched Nemotron MoE dtype handlers: 23
+LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
+  0%|          | 0/984 [00:00<?, ?it/s]  0%|          | 1/984 [01:00<16:27:00, 60.24s/it]
