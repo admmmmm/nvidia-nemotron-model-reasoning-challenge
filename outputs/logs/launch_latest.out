@@ -1,0 +1,26 @@
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+huggingface login ok
+=== effective runtime config ===
+RUN_NAME=inspect_only
+RUN_FOLDER_NAME=inspect_only
+MODEL_NAME=nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+MAX_LENGTH=1024
+BATCH(train/eval)=2/1
+GRAD_ACC=8
+MAX_MEMORY_GPU=39GiB
+MAX_MEMORY_CPU=48GiB
+MAX_GRAD_NORM=1.0
+EVALUATION_STRATEGY=no
+SAVE_STRATEGY=epoch
+DISABLE_EVAL=1
+LOCAL_FILES_ONLY=1
+FORCE_FULL_GPU=1
+ASSISTANT_TARGET_STYLE=boxed_final_line
+INIT_ADAPTER_DIR=
+RUN_LOG_DIR=outputs/logs/inspect_only
+LOG_FILE=outputs/logs/inspect_only/train_20260414_0618.log
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:14<02:53, 14.49s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:48<04:45, 25.96s/it]
