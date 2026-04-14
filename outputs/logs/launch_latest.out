@@ -23,4 +23,72 @@ huggingface/tokenizers: The current process just got forked, after parallelism h
 To disable this warning, you can either:
 	- Avoid using `tokenizers` before the fork if possible
 	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:12<02:32, 12.72s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:22<02:01, 11.07s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:32<01:43, 10.33s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:41<01:30, 10.02s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [00:51<01:19,  9.95s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:01<01:08,  9.84s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:12<01:01, 10.26s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:22<00:50, 10.15s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [01:33<00:41, 10.48s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [01:53<00:40, 13.37s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [02:04<00:25, 12.80s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [02:18<00:13, 13.04s/it]
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:12<02:32, 12.72s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:22<02:01, 11.07s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [00:32<01:43, 10.33s/it]Loading checkpoint shards:  31%|███       | 4/13 [00:41<01:30, 10.02s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [00:51<01:19,  9.95s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [01:01<01:08,  9.84s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [01:12<01:01, 10.26s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [01:22<00:50, 10.15s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [01:33<00:41, 10.48s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [01:53<00:40, 13.37s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [02:04<00:25, 12.80s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [02:18<00:13, 13.04s/it]Loading checkpoint shards: 100%|██████████| 13/13 [02:25<00:00, 11.19s/it]Loading checkpoint shards: 100%|██████████| 13/13 [02:25<00:00, 11.17s/it]
+/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/training_args.py:1568: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Patched Nemotron MoE dtype handlers: 23
+LoRA trainable params: 1,867,776 / 16,592,721,344 (0.011257%)
+Sample trainable parameter names:
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.5.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.k_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.v_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.12.mixer.o_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.q_proj.lora_B.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_A.default.weight
+  - base_model.model.backbone.layers.19.mixer.k_proj.lora_B.default.weight
+  0%|          | 0/492 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/nemotron/src/train/sft_local.py", line 526, in <module>
+    main()
+  File "/root/nemotron/src/train/sft_local.py", line 515, in main
+    trainer.train()
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 2123, in train
+    return inner_training_loop(
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 2481, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 3579, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/transformers/trainer.py", line 3633, in compute_loss
+    outputs = model(**inputs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/utils/operations.py", line 823, in forward
+    return model_forward(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/utils/operations.py", line 811, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/amp/autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/peft/peft_model.py", line 1644, in forward
+    return self.base_model(
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 197, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/vipuser/anaconda3/envs/nemotron_grpo/lib/python3.10/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+  File "/root/.cache/huggingface/modules/transformers_modules/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/cbd3fa9f933d55ef16a84236559f4ee2a0526848/modeling_nemotron_h.py", line 1724, in forward
+    shift_logits = logits[..., :-1, :].contiguous()
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 5.54 GiB. GPU 0 has a total capacty of 39.39 GiB of which 3.16 GiB is free. Including non-PyTorch memory, this process has 36.21 GiB memory in use. Of the allocated memory 33.83 GiB is allocated by PyTorch, and 1.85 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+  0%|          | 0/492 [00:29<?, ?it/s]
+Training failed. Log: outputs/logs/RSFT_programmatic_core_plus_symbol_v1/train_20260414_0700.log
